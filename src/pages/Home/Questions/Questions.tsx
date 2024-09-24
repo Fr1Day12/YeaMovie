@@ -6,14 +6,14 @@ import svg from "@/shared/assets/svg/stick.svg";
 import { useState } from "react";
 
 const Questions = () => {
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [openId, setOpenId] = useState<number>(0);
 
   const toggleQuestion = (id: number) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <section>
+    <section className={classes.section}>
       <div className={classes.container}>
         <div className={classes.headline}>
           <div className={classes.textContainer}>
