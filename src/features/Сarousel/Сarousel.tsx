@@ -3,7 +3,7 @@ import { filmsCategory } from "@/shared/constants";
 import Slider from "react-slick";
 import * as classes from "./classes.module.scss";
 
-interface СarouselProps {
+interface Props {
   sliderRef: React.RefObject<Slider>;
 }
 
@@ -15,7 +15,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const Сarousel = ({ sliderRef }: СarouselProps) => {
+const Сarousel = ({ sliderRef }: Props) => {
   return (
     <div className={classes.containerCards}>
       <Slider

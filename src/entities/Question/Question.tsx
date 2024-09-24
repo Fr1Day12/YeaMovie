@@ -1,5 +1,6 @@
 import * as classes from "./classes.module.scss";
 import { VFC, SVGProps } from "react";
+import cn from "classnames";
 
 interface QuestionProps {
   question: string;
@@ -21,9 +22,10 @@ const Question = ({
   return (
     <div
       onClick={onClick}
-      className={`${classes.container} ${
-        showQuestion ? classes.showAnswer : ""
-      }`}>
+      className={cn(
+        classes.container,
+        `${showQuestion ? classes.containerOpen : ""}`
+      )}>
       <div className={classes.box}>{number}</div>
       <div className={classes.text}>
         <h3>{question}</h3>
