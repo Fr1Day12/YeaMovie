@@ -15,10 +15,12 @@ const Nav = () => {
       <Link to="/">
         <Button text={"Home"} onClick={() => {}} />
       </Link>
-      <Link to="/movies">
+      <Link to="/Movies">
         <Button text={"Movie & Shows"} onClick={() => {}} />
       </Link>
-      <Button text={"Support"} onClick={() => {}} />
+      <Link to="/Support">
+        <Button text={"Support"} onClick={() => {}} />
+      </Link>
       <Button text={"Subscribe"} onClick={() => {}} />
     </nav>
   );
