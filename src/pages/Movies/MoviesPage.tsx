@@ -7,7 +7,8 @@ const MoviesPage = () => {
     <>
       <Header />
       <SliderMovie />
-      <MoviesCategory />
+      <MoviesCategory Category={"Movies"} />
+      <MoviesCategory Category={"Shows"} />
     </>
   );
 };

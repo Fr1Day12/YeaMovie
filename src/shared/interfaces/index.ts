@@ -1,19 +1,3 @@
-export interface Films {
-  currentData: Film;
-  data: Film;
-  endpointName: string;
-  fulfilledTimeStamp: number;
-  isError: boolean;
-  isFetching: boolean;
-  isSuccess: boolean;
-  isUninitialized: boolean;
-  originalArgs: Args;
-  refetch: () => void;
-  requestId: string;
-  startedTimestamp: number;
-  status: string;
-}
-
 export interface Film {
   items: FilmData[];
   total: number;
@@ -21,22 +5,43 @@ export interface Film {
 }
 
 export interface FilmData {
-  countries: string[];
-  genres: string[];
-  imdbId?: string;
   kinopoiskId: number;
-  nameEn?: string;
-  nameOriginal?: string;
-  nameRu?: string;
+  imdbId?: string;
+  nameRu: string;
+  nameEn?: string | null;
+  nameOriginal: string;
+  countries: Country[];
+  genres: Genre[];
+  ratingKinopoisk: number;
+  ratingImdb: number;
+  year: number;
+  type: string;
   posterUrl: string;
   posterUrlPreview: string;
-  ratingImdb: number;
-  ratingKinopoisk: number;
-  type: string;
-  year: number;
+  coverUrl: string;
+  logoUrl?: string;
+  description: string;
+  ratingAgeLimits: string;
+}
+
+export interface Genre {
+  genre: string;
+}
+
+export interface Country {
+  country: string;
 }
 
 export interface Args {
   genre: number;
   page: number;
+}
+
+export enum ECollections {
+  TOP_POPULAR_ALL = "TOP_POPULAR_ALL",
+  TOP_POPULAR_MOVIES = "TOP_POPULAR_MOVIES",
+  TOP_250_TV_SHOWS = "TOP_250_TV_SHOWS",
+  TOP_250_MOVIES = "TOP_250_MOVIES",
+  VAMPIRE_THEME = "VAMPIRE_THEME",
+  COMICS_THEME = "COMICS_THEME",
 }
