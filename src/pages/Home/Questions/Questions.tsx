@@ -6,10 +6,10 @@ import svg from "@/shared/assets/svg/stick.svg";
 import { useState } from "react";
 
 const Questions = () => {
-  const [showQuestion, setShowQuestion] = useState<number | null>(null);
+  const [openId, setOpenId] = useState<number | null>(null);
 
   const toggleQuestion = (id: number) => {
-    setShowQuestion((prev) => (prev === id ? null : id));
+    setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
@@ -39,8 +39,7 @@ const Questions = () => {
             text={question.text}
             svg={svg}
             onClick={() => toggleQuestion(question.id)}
-            showQuestion={showQuestion}
-            id={question.id}
+            showQuestion={openId === question.id}
           />
         ))}
       </div>

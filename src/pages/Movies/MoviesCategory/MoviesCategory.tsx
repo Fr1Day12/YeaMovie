@@ -1,6 +1,5 @@
 import Button from "@/shared/button/Button";
 import * as classes from "./classes.module.scss";
-import { useRef } from "react";
 import Categories from "@/pages/Home/Categories/Categories";
 
 const MoviesCategory = () => {

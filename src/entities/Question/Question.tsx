@@ -6,9 +6,8 @@ interface QuestionProps {
   text: string;
   number: string;
   svg: VFC<SVGProps<SVGSVGElement>>;
-  showQuestion: null | number;
+  showQuestion: boolean;
   onClick: () => void;
-  id: number;
 }
 
 const Question = ({
@@ -18,18 +17,17 @@ const Question = ({
   svg: ImgComponent,
   onClick,
   showQuestion,
-  id,
 }: QuestionProps) => {
   return (
     <div
       onClick={onClick}
       className={`${classes.container} ${
-        showQuestion === id ? classes.showAnswer : ""
+        showQuestion ? classes.showAnswer : ""
       }`}>
       <div className={classes.box}>{number}</div>
       <div className={classes.text}>
         <h3>{question}</h3>
-        {showQuestion === id && (
+        {showQuestion && (
           <div className={classes.answer}>
             <p>{text}</p>
           </div>
@@ -39,7 +37,7 @@ const Question = ({
       <div className={classes.iconContainer}>
         <ImgComponent
           className={`${classes.image} ${
-            showQuestion === id ? "" : classes.rotateImage
+            showQuestion ? "" : classes.rotateImage
           }`}
         />
         <span className={classes.verticalLine}></span>
