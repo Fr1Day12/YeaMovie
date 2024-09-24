@@ -1,8 +1,12 @@
+.section {
+  margin: 150px 162px;
+}
+
 .container {
   display: flex;
   align-items: center;
   width: var(--container-width);
-  margin: 150px 162px;
+  margin-bottom: 150px;
 }
 
 .headline {
@@ -44,6 +48,7 @@
 .containerQuestions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 175px);
   grid-auto-flow: column;
+  column-gap: 80px;
 }
