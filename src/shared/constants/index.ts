@@ -274,3 +274,26 @@ export const serialSection = [
     title: "Must - Watch Shows",
   },
 ];
+
+export const moviesAndShows = [
+  {
+    id: 1,
+    title: "Our Genres",
+  },
+  {
+    id: 2,
+    title: "Popular Top 10 In Genres",
+  },
+  {
+    id: 3,
+    title: "Trending Now",
+  },
+  {
+    id: 4,
+    title: "New Releases",
+  },
+  {
+    id: 5,
+    title: "Must - Watch",
+  },
+];

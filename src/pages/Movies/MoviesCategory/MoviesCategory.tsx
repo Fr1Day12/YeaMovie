@@ -1,15 +1,22 @@
 import Button from "@/shared/button/Button";
 import * as classes from "./classes.module.scss";
-import Categories from "@/pages/Home/Categories/Categories";
+import Categories from "@/shared/Categories/Categories";
+import { moviesAndShows } from "@/shared/constants";
 
-const MoviesCategory = () => {
+interface Props {
+  Category: string;
+}
+
+const MoviesCategory = ({ Category }: Props) => {
   return (
     <section className={classes.container}>
       <div className={classes.buttonContainer}>
-        <Button text="Movies" onClick={() => {}} className={classes.button} />
+        <Button text={Category} onClick={() => {}} className={classes.button} />
       </div>
 
-      <Categories title={"Our Genres"} className={classes.movieCarousel} />
+      {moviesAndShows.map((item) => (
+        <Categories key={item.id} title={item.title} width={1498} />
+      ))}
     </section>
   );
 };
