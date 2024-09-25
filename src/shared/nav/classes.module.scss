@@ -1,8 +1,19 @@
 .navigation {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   background-color: var(--black-06);
   border: 4px solid var(--black-12);
   border-radius: 12px;
   padding: 10px 40px 10px 10px;
+  width: 585px;
+}
+
+.active {
+  background: var(--black-10);
+  border: 1px solid var(--black-10);
+  border-radius: 8px;
+}
+
+.button {
+  width: 183px;
 }

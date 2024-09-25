@@ -13,9 +13,24 @@ const Footer = () => {
         <div>
           <h5 className={classes.title}>Connect With Us</h5>
           <div className={classes.icons}>
-            <Facebook width={24} height={24} className={classes.image} />
-            <Twitter width={24} height={24} className={classes.image} />
-            <LinkedIn width={24} height={24} className={classes.image} />
+            <Facebook
+              width={24}
+              height={24}
+              className={classes.image}
+              onClick={() => window.open("https://www.facebook.com/", "_blank")}
+            />
+            <Twitter
+              width={24}
+              height={24}
+              className={classes.image}
+              onClick={() => window.open("https://twitter.com/", "_blank")}
+            />
+            <LinkedIn
+              width={24}
+              height={24}
+              className={classes.image}
+              onClick={() => window.open("https://www.linkedin.com/", "_blank")}
+            />
           </div>
         </div>
       </div>
