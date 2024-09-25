@@ -1,7 +1,13 @@
 import Button from "@/shared/button/Button";
 import * as classes from "./classes.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const Trial = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/Subscribe");
+  };
   return (
     <div className={classes.container}>
       <div className={classes.text}>
@@ -14,7 +20,7 @@ const Trial = () => {
 
       <Button
         text={"Start Free Trial"}
-        onClick={() => {}}
+        onClick={() => handleClick()}
         className={classes.button}
       />
     </div>

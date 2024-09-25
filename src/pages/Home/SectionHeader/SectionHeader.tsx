@@ -3,6 +3,7 @@ import * as classes from "./classes.module.scss";
 import Button from "@/shared/button/Button";
 import Play from "@/shared/assets/svg/play.svg";
 import { useEffect, useState } from "react";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
 const SectionHeader = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 871);
@@ -16,6 +17,12 @@ const SectionHeader = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/Movies");
+  };
 
   return (
     <section className={classes.container}>
@@ -49,7 +56,7 @@ const SectionHeader = () => {
       <div className={classes.buttonContainer}>
         <Button
           text="Start Watching Now"
-          onClick={() => {}}
+          onClick={() => handleClick()}
           className={classes.button}>
           <Play />
         </Button>

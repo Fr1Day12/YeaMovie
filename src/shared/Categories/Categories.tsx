@@ -52,6 +52,7 @@ const Categories = ({ text, title, width }: Props) => {
       );
     }
   };
+
   return (
     <section
       className={width ? ` ${classes.containerWidth}` : classes.container}>

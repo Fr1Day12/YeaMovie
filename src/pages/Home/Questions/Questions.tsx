@@ -4,12 +4,19 @@ import { questions } from "@/shared/constants";
 import Question from "@/entities/Question/Question";
 import svg from "@/shared/assets/svg/stick.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Questions = () => {
   const [openId, setOpenId] = useState<number>(0);
 
   const toggleQuestion = (id: number) => {
     setOpenId((prev) => (prev === id ? null : id));
+  };
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/Support");
   };
 
   return (
@@ -25,7 +32,7 @@ const Questions = () => {
           </div>
           <Button
             text="Ask a Question"
-            onClick={() => {}}
+            onClick={() => handleClick()}
             className={classes.button}
           />
         </div>
