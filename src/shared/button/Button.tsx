@@ -5,7 +5,7 @@ interface Props {
   text: string;
   className?: string;
   children?: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Button = ({ text, onClick, className, children }: Props) => {

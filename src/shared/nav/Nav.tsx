@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "@/shared/button/Button";
 import * as classes from "./classes.module.scss";
 import { useState } from "react";
@@ -12,16 +12,26 @@ const Nav = () => {
 
   return (
     <nav className={classes.navigation}>
-      <Link to="/">
-        <Button text={"Home"} onClick={() => {}} />
-      </Link>
-      <Link to="/Movies">
-        <Button text={"Movie & Shows"} onClick={() => {}} />
-      </Link>
-      <Link to="/Support">
-        <Button text={"Support"} onClick={() => {}} />
-      </Link>
-      <Button text={"Subscribe"} onClick={() => {}} />
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? classes.active : "")}>
+        <Button text={"Home"} />
+      </NavLink>
+      <NavLink
+        to="/Movies"
+        className={({ isActive }) => (isActive ? classes.active : "")}>
+        <Button text={"Movie & Shows"} className={classes.button} />
+      </NavLink>
+      <NavLink
+        to="/Support"
+        className={({ isActive }) => (isActive ? classes.active : "")}>
+        <Button text={"Support"} />
+      </NavLink>
+      <NavLink
+        to="/Subscribe"
+        className={({ isActive }) => (isActive ? classes.active : "")}>
+        <Button text={"Subscribe"} />
+      </NavLink>
     </nav>
   );
 };

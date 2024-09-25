@@ -1,5 +1,6 @@
 import Button from "@/shared/button/Button";
 import * as classes from "./classes.module.scss";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -10,6 +11,12 @@ interface Props {
 }
 
 const PlanCard = ({ title, text, price, calendar, priceYear }: Props) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/Subscribe");
+  };
+
   return (
     <div className={classes.container}>
       <h4>{title}</h4>
@@ -21,12 +28,12 @@ const PlanCard = ({ title, text, price, calendar, priceYear }: Props) => {
       <div className={classes.buttonContainer}>
         <Button
           text={"Start Free Trial"}
-          onClick={() => {}}
+          onClick={() => handleClick()}
           className={classes.button}
         />
         <Button
           text={"Choose Plan"}
-          onClick={() => {}}
+          onClick={() => handleClick()}
           className={classes.buttonRed}
         />
       </div>
