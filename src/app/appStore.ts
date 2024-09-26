@@ -1,15 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import filmSlice from "@/features/Slices/filmSlice";
-import { kinopoiskApi } from "@/features/Api/kinopoiskApi";
+import { kinopoiskApi } from "@/entities/Movies/model/Api/kinopoiskApi";
+import filmSlice from "@/entities/Movies/model/Slices/filmSlice";
+import { searchMovieApi } from "@/entities/Movies/ui/SearchMovie/api/searchMovieApi";
 
 export const store = configureStore({
   reducer: {
     filmSlice,
     [kinopoiskApi.reducerPath]: kinopoiskApi.reducer,
+    [searchMovieApi.reducerPath]: searchMovieApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(kinopoiskApi.middleware),
+    getDefaultMiddleware()
+      .concat(kinopoiskApi.middleware)
+      .concat(searchMovieApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

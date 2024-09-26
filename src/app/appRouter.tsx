@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import MoviesPage from "@/pages/Movies/MoviesPage";
-import HomePage from "@/pages/Home/HomePage";
-import SupportPage from "@/pages/Support Page/SupportPage";
+import MoviesPage from "@/pages/Movies/ui/MoviesPage";
+import SupportPage from "@/pages/Support Page/ui/SupportPage";
 import App from "@/app/layouts/appLayout";
-import Subscribe from "@/pages/Subscription Page/Subscribe";
+import Subscribe from "@/pages/Subscription Page/ui/Subscribe";
+import SearchPage from "@/pages/SearchPage/ui/SearchPage";
+import HomePage from "@/pages/Home/ui/HomePage";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/Subscribe",
         element: <Subscribe />,
+      },
+      {
+        path: "/search/:keyword",
+        element: <SearchPage />,
       },
     ],
   },

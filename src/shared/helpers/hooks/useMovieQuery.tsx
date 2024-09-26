@@ -1,4 +1,4 @@
-import { useGetFilmsByTypeQuery } from "@/features/Api/kinopoiskApi";
+import { useGetFilmsByTypeQuery } from "@/entities/Movies/model/Api/kinopoiskApi";
 
 const useMovieQuery = () => {
   const responceAction = useGetFilmsByTypeQuery({ genre: 11, page: 1 });
