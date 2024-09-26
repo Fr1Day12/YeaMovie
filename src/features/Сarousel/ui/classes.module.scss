@@ -1,0 +1,16 @@
+.containerCards {
+  display: flex;
+  width: 1597px;
+  height: 342px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.slider {
+  width: var(--container-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
