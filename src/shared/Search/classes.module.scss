@@ -1,0 +1,14 @@
+.input {
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid var(--black-15);
+  border-radius: 8px;
+  background-color: var(--black-06);
+  color: var(--absolute-white);
+
+  position: absolute;
+  top: 95px;
+  right: 30px;
+  width: 350px;
+  z-index: 2;
+}
