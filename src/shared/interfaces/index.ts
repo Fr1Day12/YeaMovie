@@ -1,7 +1,7 @@
 export interface Film {
   items: FilmData[];
-  total: number;
-  totalPages: number;
+  total?: number;
+  totalPages?: number;
 }
 
 export interface FilmData {
