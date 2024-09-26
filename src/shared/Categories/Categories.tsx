@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import Slider from "react-slick";
 import Arrow from "@/shared/assets/svg/arrow.svg";
 import Line from "@/shared/assets/svg/line.svg";
-import useMovieQuery from "@/shared/hooks/useMovieQuery";
+import useMovieQuery from "@/shared/helpers/hooks/useMovieQuery";
 
 interface Props {
   text?: string;
@@ -16,21 +16,21 @@ interface Props {
 }
 
 const Categories = ({ text, title, width }: Props) => {
-  // const {
-  //   isLoading,
-  //   hasError,
-  //   responceAction,
-  //   responceComedy,
-  //   responceHorror,
-  //   responceCartoon,
-  //   responceMusical,
-  //   responceMystery,
-  //   responceHistory,
-  //   responceDrama,
-  // } = useMovieQuery();
+  const {
+    isLoading,
+    hasError,
+    responceAction,
+    responceComedy,
+    responceHorror,
+    responceCartoon,
+    responceMusical,
+    responceMystery,
+    responceHistory,
+    responceDrama,
+  } = useMovieQuery();
 
-  // const responce = responceAction;
-  // console.log(responce);
+  const responce = responceAction;
+  console.log(responce);
 
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);

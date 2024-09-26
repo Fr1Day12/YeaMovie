@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import filmSlice from "@/features/filmSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { kinopoiskApi } from "@/features/kinopoiskApi";
+import filmSlice from "@/features/Slices/filmSlice";
+import { kinopoiskApi } from "@/features/Api/kinopoiskApi";
 
 export const store = configureStore({
   reducer: {
-    // filmSlice,
-    // [kinopoiskApi.reducerPath]: kinopoiskApi.reducer,
+    filmSlice,
+    [kinopoiskApi.reducerPath]: kinopoiskApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(kinopoiskApi.middleware),
