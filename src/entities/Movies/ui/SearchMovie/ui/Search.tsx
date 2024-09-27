@@ -10,10 +10,8 @@ interface Props {
 
 const Search = ({ keywords, setKeywords }: Props) => {
   const navigate = useNavigate();
-  const debouncedKeywords = useDebounce(keywords, 300);
-  const { data, isLoading } = useGetSearchMovieQuery(debouncedKeywords, {
-    skip: debouncedKeywords.length < 1,
-  });
+  const debouncedKeywords = useDebounce(keywords, 1000);
+  const { data, isLoading } = useGetSearchMovieQuery(debouncedKeywords || "");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeywords(e.target.value);
@@ -32,11 +30,14 @@ const Search = ({ keywords, setKeywords }: Props) => {
         className={classes.input}
         placeholder="Search..."
       />
-      {isLoading && <div>Loading...</div>}
-      {data && (
+
+      {!isLoading && (
         <ul className={classes.suggestions}>
-          {data.films.map((movie) => (
-            <li key={movie.filmId} onClick={() => handleSelect(movie.filmId)}>
+          {data?.items.map((movie) => (
+            <li
+              className={classes.list}
+              key={movie.kinopoiskId}
+              onClick={() => handleSelect(movie.kinopoiskId)}>
               {movie.nameRu}
             </li>
           ))}

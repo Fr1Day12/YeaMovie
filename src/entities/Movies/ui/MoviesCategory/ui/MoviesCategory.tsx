@@ -11,7 +11,7 @@ const MoviesCategory = ({ Category }: Props) => {
   return (
     <section className={classes.container}>
       <div className={classes.buttonContainer}>
-        <Button text={Category} onClick={() => {}} className={classes.button} />
+        <Button text={Category} className={classes.button} />
       </div>
 
       {moviesAndShows.map((item) => (

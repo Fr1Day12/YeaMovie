@@ -16,21 +16,21 @@ const settings = {
 };
 
 const Сarousel = ({ sliderRef }: Props) => {
-  const {
-    isLoading,
-    hasError,
-    responceAction,
-    responceComedy,
-    responceHorror,
-    responceCartoon,
-    responceMusical,
-    responceMystery,
-    responceHistory,
-    responceDrama,
-  } = useMovieQuery();
+  // const {
+  //   isLoading,
+  //   hasError,
+  //   responceAction,
+  //   responceComedy,
+  //   responceHorror,
+  //   responceCartoon,
+  //   responceMusical,
+  //   responceMystery,
+  //   responceHistory,
+  //   responceDrama,
+  // } = useMovieQuery();
 
-  const responce = responceComedy;
-  console.log(responce);
+  // const responce = responceComedy;
+  // console.log(responce);
 
   return (
     <div className={classes.containerCards}>
@@ -40,7 +40,7 @@ const Сarousel = ({ sliderRef }: Props) => {
         arrows={false}
         ref={sliderRef}
         {...settings}>
-        {!isLoading &&
+        {/* {!isLoading &&
           responce.data?.items.map((category) => (
             <Card
               onClick={() => {}}
@@ -48,7 +48,7 @@ const Сarousel = ({ sliderRef }: Props) => {
               img={category.posterUrlPreview}
               name={category.nameEn || category.nameRu}
             />
-          ))}
+          ))} */}
       </Slider>
     </div>
   );
