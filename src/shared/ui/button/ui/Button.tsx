@@ -5,12 +5,22 @@ interface Props {
   text: string;
   className?: string;
   children?: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  active?: boolean;
 }
 
-const Button = ({ text, onClick, className, children }: Props) => {
+const Button = ({
+  text,
+  onClick,
+  className,
+  children,
+  active = false,
+}: Props) => {
   return (
-    <button onClick={onClick} className={cn(classes.button, className)}>
+    <button
+      onClick={onClick}
+      className={cn(classes.button, className)}
+      disabled={active}>
       {children}
       {text}
     </button>
