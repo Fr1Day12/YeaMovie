@@ -24,3 +24,8 @@
   right: 160px;
   z-index: 2;
 }
+
+.list:hover {
+  background-color: var(--black-15);
+  cursor: pointer;
+}

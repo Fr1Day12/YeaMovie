@@ -19,7 +19,30 @@ export const kinopoiskApi = createApi({
       query: ({ genre, page }) =>
         `/v2.2/films?genres=${genre}&order=RATING&type=FILM&ratingFrom=8&ratingTo=10&yearFrom=1000&yearTo=3000&page=${page}`,
     }),
+
+    getFilmsTop: builder.query({
+      query: ({ type, page }) =>
+        `/v2.2/films/collections?type=${type}&page=${page}`,
+    }),
+
+    getFilmsById: builder.query({
+      query: (id) => `/v2.2/films/${id}`,
+    }),
+
+    getFilmReviews: builder.query({
+      query: (id) => `/v2.2/films/${id}/reviews`,
+    }),
+
+    getFilmStaff: builder.query({
+      query: (id) => `/v1/staff?filmId=${id}`,
+    }),
   }),
 });
 
-export const { useGetFilmsByTypeQuery } = kinopoiskApi;
+export const {
+  useGetFilmsByTypeQuery,
+  useGetFilmsTopQuery,
+  useGetFilmsByIdQuery,
+  useGetFilmReviewsQuery,
+  useGetFilmStaffQuery,
+} = kinopoiskApi;

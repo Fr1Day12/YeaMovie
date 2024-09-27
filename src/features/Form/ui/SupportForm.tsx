@@ -5,6 +5,22 @@ import Button from "@/shared/ui/button/ui/Button";
 
 const SupportForm = () => {
   const [selected, setSelected] = useState("IN");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmit(true);
+  };
+  const [submit, setSubmit] = useState(false);
+
+  if (submit) {
+    return (
+      <div>
+        <h2>Thank you for your support</h2>
+        <p>We will reach you soon</p>
+      </div>
+    );
+  }
+
   return (
     <form className={classes.form}>
       <div className={classes.inputGroup}>
@@ -60,7 +76,9 @@ const SupportForm = () => {
         </div>
         <Button
           text="Send message"
-          onClick={() => {}}
+          onClick={(e) => {
+            handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
+          }}
           className={classes.button}
         />
       </div>
