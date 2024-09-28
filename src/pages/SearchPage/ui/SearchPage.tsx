@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import * as classes from "./classes.module.scss";
 import { useGetSearchMovieQuery } from "@/entities/Movies/ui/SearchMovie/api/searchMovieApi";
-import Header from "@/widgets/SectionHeader/model/Header/ui/Header";
+import Header from "@/widgets/Header/ui/Header";
 import MovieInfo from "@/entities/Movies/ui/MovieInfo/ui/MovieInfo";
 
 function SearchPage() {

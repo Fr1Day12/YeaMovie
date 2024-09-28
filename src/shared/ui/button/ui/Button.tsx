@@ -9,18 +9,9 @@ interface Props {
   active?: boolean;
 }
 
-const Button = ({
-  text,
-  onClick,
-  className,
-  children,
-  active = false,
-}: Props) => {
+const Button = ({ text, onClick, className, children }: Props) => {
   return (
-    <button
-      onClick={onClick}
-      className={cn(classes.button, className)}
-      disabled={active}>
+    <button onClick={onClick} className={cn(classes.button, className)}>
       {children}
       {text}
     </button>

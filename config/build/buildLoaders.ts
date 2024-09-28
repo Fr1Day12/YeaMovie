@@ -69,15 +69,15 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         },
       },
     ],
-    // rules: [
-    //   {
-    //     test: /\.ts$/,
-    //     loader: "ts-loader",
-    //     options: {
-    //       logLevel: "info",
-    //     },
-    //   },
-    // ],
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+        options: {
+          logLevel: "info",
+        },
+      },
+    ],
   };
 
   return [svgrLoader, assetLoader, sccLoader, cssLoader, tsLoader];

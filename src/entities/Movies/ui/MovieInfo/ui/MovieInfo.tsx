@@ -5,34 +5,37 @@ import {
 } from "@/entities/Movies/model/Api/kinopoiskApi";
 import * as classes from "./classes.module.scss";
 import { useParams } from "react-router-dom";
-import Button from "@/shared/ui/button/ui/Button";
-import Plus from "@/shared/assets/svg/plus.svg";
-import Like from "@/shared/assets/svg/like.svg";
-import Volume from "@/shared/assets/svg/volume.svg";
-import Play from "@/shared/assets/svg/play.svg";
+import MovieDetails from "@/entities/Movies/ui/MovieInfo/ui/MovieDetails/ui/MovieDetails";
+import CastSlider from "@/entities/Movies/ui/MovieInfo/ui/CastSlider/ui/CastSlider";
+import Calendar from "@/shared/assets/svg/calendar.svg";
+import Language from "@/shared/assets/svg/language.svg";
+import Star from "@/shared/assets/svg/star.svg";
+import { Rating } from "@mui/material";
+import Genres from "@/shared/assets/svg/genres.svg";
+import Image from "@/shared/ui/image/ui/Image";
+import ReviewList from "@/widgets/Reviews/ui/ReviewList/ui/ReviewList";
+import { useEffect, useState } from "react";
+import { Review } from "@/shared/interfaces";
+
+{
+  /* Разделить на компоненты и убрать инлайн стили*/
+}
 
 const MovieInfo = () => {
   const { id } = useParams();
 
-  const {
-    data: reviews,
-    isLoading: isLoadingReviews,
-    error: errorReviews,
-  } = useGetFilmReviewsQuery(id);
-  const {
-    data: staff,
-    isLoading: isLoadingStaff,
-    error: errorStaff,
-  } = useGetFilmStaffQuery(id);
-  const {
-    data: movieData,
-    isLoading: isLoadingMovie,
-    error: errorMovie,
-  } = useGetFilmsByIdQuery(id);
+  const [reviewsArray, setReviewsArray] = useState<Review[]>([]);
 
-  if (movieData) console.log("movieData", movieData);
-  if (reviews) console.log("reviews", reviews);
-  if (staff) console.log("staff", staff);
+  const { data: reviews, isLoading: isLoadingReviews } =
+    useGetFilmReviewsQuery(id);
+  const { data: staff, isLoading: isLoadingStaff } = useGetFilmStaffQuery(id);
+  const { data: movieData } = useGetFilmsByIdQuery(id);
+
+  useEffect(() => {
+    if (!isLoadingReviews && reviews) {
+      setReviewsArray(reviews.items);
+    }
+  }, [reviews, isLoadingReviews]);
 
   if (!movieData) {
     return (
@@ -48,33 +51,99 @@ const MovieInfo = () => {
   }
 
   return (
-    <div>
+    <>
       <div className={classes.wrapper}>
-        <img src={movieData.posterUrl} alt="Poster" className={classes.image} />
-        <h2 className={classes.title}>{movieData.nameRu}</h2>
-        <p className={classes.text}>{movieData.shortDescription}</p>
-
-        <div className={classes.buttons}>
-          <div className={classes.buttonContainer}>
-            <Button text={"Play Now"} className={classes.button} active={false}>
-              <Play />
-            </Button>
-          </div>
-          <div className={classes.icons}>
-            <Plus className={classes.svg} />
-            <Like className={classes.svg} />
-            <Volume className={classes.svg} />
-          </div>
-        </div>
+        <MovieDetails {...movieData} />
       </div>
 
       <div className={classes.container}>
-        <div className={classes.description}></div>
-        <div className={classes.cast}></div>
-        <div className={classes.reviews}></div>
-        <div className={classes.info}></div>
+        <div className={classes.description}>
+          <p className={classes.infoTitle}>Description</p>
+          <p className={classes.descriptionText}>{movieData.description}</p>
+        </div>
+        <div className={classes.cast}>
+          <CastSlider {...{ staff, isLoadingStaff }} />
+        </div>
+
+        {isLoadingReviews || reviews === undefined ? (
+          <div>Loading...</div>
+        ) : (
+          <ReviewList
+            reviews={reviewsArray}
+            isLoadingReviews={isLoadingReviews}
+            setReviewsArray={setReviewsArray}
+          />
+        )}
+
+        <div className={classes.info}>
+          <div className={classes.block}>
+            <Calendar className={classes.svg} />
+            <p style={{ margin: "0" }}>Reliased Year </p>
+          </div>
+          <p style={{ margin: "14px 0 30px 0" }}>{movieData.year}</p>
+
+          <div className={classes.block}>
+            <Language className={classes.svg} />
+            <p>Available Languages</p>
+          </div>
+          {movieData.countries.map((language: { country: string }) => {
+            return (
+              <div className={classes.lang} key={language.country}>
+                {language.country}
+              </div>
+            );
+          })}
+
+          <div className={classes.block}>
+            <Star className={classes.svg} />
+            <p style={{ margin: "0" }}>Rating</p>
+          </div>
+          <div className={classes.rating}>
+            <p style={{ margin: "4px" }}>Kinopoisk</p>
+            <Rating
+              name="read-only"
+              precision={0.5}
+              value={movieData.ratingKinopoisk}
+              readOnly
+            />
+          </div>
+
+          <div className={classes.block}>
+            <Genres className={classes.svg} />
+            Genres
+          </div>
+          {movieData.genres.map((genre: { genre: string }) => {
+            return (
+              <div key={genre.genre} className={classes.genre}>
+                {genre.genre}
+              </div>
+            );
+          })}
+
+          <div>
+            {!isLoadingStaff && (
+              <>
+                <p style={{ marginBottom: "14px" }}>Director</p>
+
+                <Image
+                  src={staff[0].posterUrl}
+                  alt={staff[0].nameRu}
+                  name={staff[0].nameRu}
+                />
+
+                <p style={{ marginBottom: "14px" }}>Producer</p>
+
+                <Image
+                  src={staff[1].posterUrl}
+                  alt={staff[1].nameRu}
+                  name={staff[1].nameRu}
+                />
+              </>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

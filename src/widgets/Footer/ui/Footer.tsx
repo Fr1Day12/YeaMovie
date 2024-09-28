@@ -2,7 +2,7 @@ import * as classes from "./classes.module.scss";
 import Facebook from "@/shared/assets/svg/social/facebook.svg";
 import Twitter from "@/shared/assets/svg/social/twitter.svg";
 import LinkedIn from "@/shared/assets/svg/social/linkedIn.svg";
-import FooterBlocks from "@/widgets/Footer/model/FooterBlocks/ui/FooterBlocks";
+import FooterBlocks from "@/widgets/Footer/ui/FooterBlocks/ui/FooterBlocks";
 
 const Footer = () => {
   return (

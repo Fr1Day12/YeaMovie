@@ -1,7 +1,6 @@
 import * as classes from "./classes.module.scss";
 import Categories from "@/shared/ui/Categories/ui/Categories";
 import { moviesAndShows } from "@/shared/constants";
-import Button from "@/shared/ui/button/ui/Button";
 
 interface Props {
   Category: string;
@@ -11,7 +10,7 @@ const MoviesCategory = ({ Category }: Props) => {
   return (
     <section className={classes.container}>
       <div className={classes.buttonContainer}>
-        <Button text={Category} className={classes.button} />
+        <div className={classes.block}>{Category} </div>
       </div>
 
       {moviesAndShows.map((item) => (
