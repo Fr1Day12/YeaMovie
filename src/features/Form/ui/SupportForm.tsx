@@ -14,9 +14,18 @@ const SupportForm = () => {
 
   if (submit) {
     return (
-      <div>
-        <h2>Thank you for your support</h2>
-        <p>We will reach you soon</p>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+        <h2
+          style={{
+            textAlign: "center",
+          }}>
+          Thank you for your support. We will reach you soon!
+        </h2>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import * as classes from "./classes.module.scss";
 import { useState } from "react";
 import { plans } from "@/shared/constants";
 import ToggleSwitch from "@/shared/ui/toggleSwitch/ui/ToggleSwitch";
-import PlanCard from "@/widgets/Plan/model/ui/PlanCard";
+import PlanCard from "@/widgets/Plan/ui/PlanCard/ui/PlanCard";
 
 const Plan = () => {
   const [calendar, setСalendar] = useState(true);

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { kinopoiskApi } from "@/entities/Movies/model/Api/kinopoiskApi";
 import filmSlice from "@/entities/Movies/model/Slice/filmSlice";
 import { searchMovieApi } from "@/entities/Movies/ui/SearchMovie/api/searchMovieApi";
-import { searchQuerySlice } from "@/entities/Movies/ui/SearchMovie/Slice/searchQuerySlice";
+import { searchQuerySlice } from "@/entities/Movies/ui/SearchMovie/model/searchQuerySlice";
 
 export const store = configureStore({
   reducer: {
