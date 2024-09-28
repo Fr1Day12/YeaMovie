@@ -1,0 +1,29 @@
+.text {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin: 150px 0 80px 161px;
+  padding-right: 300px;
+  width: var(--container-width);
+  height: 125px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--absolute-white);
+    margin: 0 0 14px 0;
+  }
+
+  p {
+    font-size: 18px;
+    color: var(--grey-60);
+  }
+}
+
+.containerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}

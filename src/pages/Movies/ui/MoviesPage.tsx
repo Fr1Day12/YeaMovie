@@ -1,6 +1,6 @@
 import MoviesCategory from "@/entities/Movies/ui/MoviesCategory/ui/MoviesCategory";
 import SliderMovie from "@/entities/Movies/ui/SliderMovie/ui/SliderMovie";
-import Header from "@/widgets/SectionHeader/model/Header/ui/Header";
+import Header from "@/widgets/Header/ui/Header";
 
 const MoviesPage = () => {
   return (

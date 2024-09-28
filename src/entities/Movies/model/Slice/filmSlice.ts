@@ -1,21 +1,19 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Film } from "@/shared/interfaces";
+import { FilmData } from "@/shared/interfaces";
 
 interface State {
-  items?: Film;
+  items: FilmData[];
 }
 
 const initialState: State = {
-  items: {
-    items: [],
-  },
+  items: [],
 };
 
 const filmSlice = createSlice({
   name: "filmSlice",
   initialState,
   reducers: {
-    setItems: (state, action: PayloadAction<Film>) => {
+    setItems: (state, action: PayloadAction<FilmData[]>) => {
       state.items = action.payload;
     },
   },
