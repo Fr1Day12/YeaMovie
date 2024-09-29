@@ -204,24 +204,6 @@ export const filmsCategory = [
   },
 ];
 
-export const line = [
-  {
-    id: 1,
-  },
-
-  {
-    id: 2,
-  },
-
-  {
-    id: 3,
-  },
-
-  {
-    id: 4,
-  },
-];
-
 export const textCategories =
   "Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new";
 
@@ -251,7 +233,7 @@ export const movieSection = [
   },
 ];
 
-export const serialSection = [
+export const showsSection = [
   {
     id: 1,
     title: "Our Genres",
@@ -272,28 +254,5 @@ export const serialSection = [
   {
     id: 5,
     title: "Must - Watch Shows",
-  },
-];
-
-export const moviesAndShows = [
-  {
-    id: 1,
-    title: "Our Genres",
-  },
-  {
-    id: 2,
-    title: "Popular Top 10 In Genres",
-  },
-  {
-    id: 3,
-    title: "Trending Now",
-  },
-  {
-    id: 4,
-    title: "New Releases",
-  },
-  {
-    id: 5,
-    title: "Must - Watch",
   },
 ];

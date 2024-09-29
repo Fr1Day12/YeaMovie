@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { kinopoiskApi } from "@/entities/Movies/model/Api/kinopoiskApi";
-import filmSlice from "@/entities/Movies/model/Slice/filmSlice";
 import { searchMovieApi } from "@/entities/Movies/ui/SearchMovie/api/searchMovieApi";
 import { searchQuerySlice } from "@/entities/Movies/ui/SearchMovie/model/searchQuerySlice";
+import favoritesSlice from "@/features/Favorites/Slice/favoritesSlice";
 
 export const store = configureStore({
   reducer: {
-    filmSlice,
     [kinopoiskApi.reducerPath]: kinopoiskApi.reducer,
     [searchMovieApi.reducerPath]: searchMovieApi.reducer,
     searchQuerySlice: searchQuerySlice.reducer,
+    favorites: favoritesSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

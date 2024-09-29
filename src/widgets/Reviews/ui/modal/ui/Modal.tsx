@@ -24,9 +24,9 @@ const Modal = ({ isOpen, onClose, onSubmit }: Props) => {
     e.preventDefault();
 
     let typeString: string;
-    if (type >= 5) {
+    if (type >= 8 && type <= 10) {
       typeString = "POSITIVE";
-    } else if (type < 5 && type > 0) {
+    } else if (type >= 4 && type <= 7) {
       typeString = "NEGATIVE";
     } else {
       typeString = "NEUTRAL";
@@ -49,7 +49,6 @@ const Modal = ({ isOpen, onClose, onSubmit }: Props) => {
   return ReactDOM.createPortal(
     <div className={classes.modalOverlay} onClick={handleOverlayClick}>
       <div className={classes.modalContent}>
-        <h2>Leave a Comment</h2>
         <form onSubmit={handleSubmit}>
           <div className={classes.formGroup}>
             <label htmlFor="name">Name:</label>

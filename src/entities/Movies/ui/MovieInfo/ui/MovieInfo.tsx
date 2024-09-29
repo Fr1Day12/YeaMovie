@@ -80,7 +80,7 @@ const MovieInfo = () => {
             <Calendar className={classes.svg} />
             <p style={{ margin: "0" }}>Reliased Year </p>
           </div>
-          <p style={{ margin: "14px 0 30px 0" }}>{movieData.year}</p>
+          <p style={{ margin: "14px 0 3s0px 0" }}>{movieData.year}</p>
 
           <div className={classes.block}>
             <Language className={classes.svg} />

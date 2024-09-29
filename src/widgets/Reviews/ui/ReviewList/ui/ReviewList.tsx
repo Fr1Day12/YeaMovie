@@ -64,7 +64,7 @@ const ReviewList = ({ reviews, isLoadingReviews, setReviewsArray }: Props) => {
         {isLoadingReviews ? (
           <div>Loading...</div>
         ) : reviews === undefined ? (
-          <div>No reviews</div>
+          <h3>No reviews</h3>
         ) : (
           reviews
             .slice(
