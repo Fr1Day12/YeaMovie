@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Nav from "@/shared/ui/nav/ui/Nav";
 import Search from "@/entities/Movies/ui/SearchMovie/ui/Search";
+import Favorites from "@/features/Favorites/ui/Favorites";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [keywords, setKeywords] = useState("");
+  const [favoritesOpen, setFavoritesOpen] = useState(false);
+
+  const handleFavoritesClose = () => {
+    setFavoritesOpen(false);
+  };
 
   return (
     <header className={classes.container}>
@@ -30,7 +36,13 @@ const Header = () => {
           style={{ cursor: "pointer" }}
         />
         {open && <Search keywords={keywords} setKeywords={setKeywords} />}
-        <Notification width={24} height={26} style={{ cursor: "pointer" }} />
+        <Notification
+          width={24}
+          height={26}
+          style={{ cursor: "pointer" }}
+          onClick={() => setFavoritesOpen((prev) => !prev)}
+        />
+        {favoritesOpen && <Favorites handleClose={handleFavoritesClose} />}
       </div>
     </header>
   );

@@ -1,21 +1,51 @@
+import useMovieQuery from "@/shared/helpers/hooks/useMovieQuery";
 import * as classes from "./classes.module.scss";
-import Categories from "@/shared/ui/Categories/ui/Categories";
-import { moviesAndShows } from "@/shared/constants";
+import MovieCard from "@/entities/MovieCard/ui/MovieCard";
+import Slider from "@/shared/ui/Slider/ui/Slider";
+import { useNavigate } from "react-router-dom";
+import { movieSection, showsSection } from "@/shared/constants";
+import { FilmData } from "@/shared/interfaces";
 
 interface Props {
   Category: string;
 }
 
 const MoviesCategory = ({ Category }: Props) => {
+  const dataToUse = Category === "Movies" ? movieSection : showsSection;
+  const movieData = dataToUse.map(({ id }) => useMovieQuery(Category, id));
+  const navigate = useNavigate();
+
+  const handleClick = (id: number) => {
+    navigate(`/Movies:${id}`);
+  };
+
   return (
     <section className={classes.container}>
       <div className={classes.buttonContainer}>
-        <div className={classes.block}>{Category} </div>
-      </div>
+        <div className={classes.block}>{Category}</div>
+        {movieSection.map((item, index) => {
+          const { isLoading, data } = movieData[index];
 
-      {moviesAndShows.map((item) => (
-        <Categories key={item.id} title={item.title} width={1498} />
-      ))}
+          if (isLoading) {
+            return <div key={item.id}>Loading...</div>;
+          }
+
+          return (
+            <div key={item.id}>
+              <Slider items={data.items} title={item.title}>
+                {data.items.map((movie: FilmData) => (
+                  <div key={movie.kinopoiskId}>
+                    <MovieCard
+                      {...movie}
+                      onClick={() => handleClick(movie.kinopoiskId)}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };

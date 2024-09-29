@@ -1,10 +1,12 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import MoviesPage from "@/pages/Movies/ui/MoviesPage";
-import SupportPage from "@/pages/Support Page/ui/SupportPage";
 import App from "@/app/layouts/appLayout";
-import Subscribe from "@/pages/Subscription Page/ui/Subscribe";
-import SearchPage from "@/pages/SearchPage/ui/SearchPage";
-import HomePage from "@/pages/Home/ui/HomePage";
+
+const MoviesPage = lazy(() => import("@/pages/Movies/ui/MoviesPage"));
+const SupportPage = lazy(() => import("@/pages/SupportPage/ui/SupportPage"));
+const Subscribe = lazy(() => import("@/pages/SubscriptionPage/ui/Subscribe"));
+const SearchPage = lazy(() => import("@/pages/SearchPage/ui/SearchPage"));
+const HomePage = lazy(() => import("@/pages/Home/ui/HomePage"));
 
 export const router = createBrowserRouter([
   {
@@ -14,23 +16,43 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <HomePage />
+          </Suspense>
+        ),
       },
       {
         path: "/Movies",
-        element: <MoviesPage />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <MoviesPage />
+          </Suspense>
+        ),
       },
       {
         path: "/Support",
-        element: <SupportPage />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <SupportPage />
+          </Suspense>
+        ),
       },
       {
         path: "/Subscribe",
-        element: <Subscribe />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Subscribe />
+          </Suspense>
+        ),
       },
       {
         path: "/movie/:id",
-        element: <SearchPage />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <SearchPage />
+          </Suspense>
+        ),
       },
     ],
   },

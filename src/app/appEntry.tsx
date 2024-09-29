@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "@/app/appStore";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./appRouter";
+import "bear-react-carousel/dist/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
