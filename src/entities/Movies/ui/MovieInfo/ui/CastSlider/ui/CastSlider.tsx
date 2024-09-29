@@ -17,7 +17,8 @@ interface Props {
 const CastSlider = ({ staff, isLoadingStaff }: Props) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const itemsPerSlide = 8;
-  const totalSlides = Math.ceil(staff.length / itemsPerSlide);
+  const totalSlides =
+    !isLoadingStaff && Math.ceil(staff.length / itemsPerSlide);
 
   const nextSlide = () => {
     setActiveSlide((prev) => (prev + 1) % totalSlides);

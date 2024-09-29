@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import * as classes from "./classes.module.scss";
 import useDebounce from "@/shared/helpers/hooks/useDebounce";
 import { useGetSearchMovieQuery } from "@/entities/Movies/ui/SearchMovie/api/searchMovieApi";
+import { FilmData } from "@/shared/interfaces";
 
 interface Props {
   keywords: string;
@@ -21,6 +22,10 @@ const Search = ({ keywords, setKeywords }: Props) => {
     navigate(`/movie/${id}`);
   };
 
+  if (isLoading) {
+    return <div style={{ position: "absolute" }}>Loading...</div>;
+  }
+
   return (
     <>
       <input
@@ -31,9 +36,9 @@ const Search = ({ keywords, setKeywords }: Props) => {
         placeholder="Search..."
       />
 
-      {!isLoading && (
+      {
         <ul className={classes.suggestions}>
-          {data?.items.map((movie) => (
+          {data.items.map((movie: FilmData) => (
             <li
               className={classes.list}
               key={movie.kinopoiskId}
@@ -42,7 +47,7 @@ const Search = ({ keywords, setKeywords }: Props) => {
             </li>
           ))}
         </ul>
-      )}
+      }
     </>
   );
 };

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: var(--container-width);
+  height: 520px;
+  margin-top: 100px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 38px;
+  color: var(--absolute-white);
+  height: 57px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 18px;
+}

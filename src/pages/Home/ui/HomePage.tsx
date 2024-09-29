@@ -1,17 +1,28 @@
-import Categories from "@/shared/ui/Categories/ui/Categories";
 import StreamSection from "@/pages/Home/ui/Stream/ui/StreamSection";
-import { textCategories, titleCategories } from "@/shared/constants";
-import * as classes from "./classes.module.scss";
 import Questions from "@/pages/Home/ui/Questions/ui/Questions";
 import SectionHeader from "@/pages/Home/ui/SectionHeader/ui/SectionHeader";
 import Plan from "@/widgets/Plan/ui/Plan";
+import useMovieQuery from "@/shared/helpers/hooks/useMovieQuery";
+import Slider from "@/shared/ui/Slider/ui/Slider";
 
 const HomePage = () => {
+  const { isLoading, data } = useMovieQuery("Movies");
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <SectionHeader />
-      <div className={classes.container}>
-        {<Categories text={textCategories} title={titleCategories} />}
+      <div style={{ margin: "200px 161px 0 161px" }}>
+        <Slider
+          items={data.items}
+          title={"Explore our wide variety of categories"}
+          text={
+            "Whether you’re looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new."
+          }
+        />
       </div>
       <StreamSection />
       <Questions />

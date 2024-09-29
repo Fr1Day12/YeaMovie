@@ -4,12 +4,16 @@ import Play from "@/shared/assets/svg/play.svg";
 import Plus from "@/shared/assets/svg/plus.svg";
 import Like from "@/shared/assets/svg/like.svg";
 import Volume from "@/shared/assets/svg/volume.svg";
+import { useAppDispatch } from "@/app/appStore";
+import { addFavorite } from "@/features/Favorites/Slice/favoritesSlice";
+import { MovieForSlice } from "@/shared/interfaces";
 
 interface Props {
   nameRu: string;
   posterUrl: string;
   shortDescription: string;
   webUrl: string;
+  id: number;
 }
 
 const MovieDetails = ({
@@ -17,7 +21,14 @@ const MovieDetails = ({
   posterUrl,
   shortDescription,
   webUrl,
+  id,
 }: Props) => {
+  const dispatch = useAppDispatch();
+
+  const handleAddToFavorites = (movie: MovieForSlice) => {
+    dispatch(addFavorite(movie));
+  };
+
   return (
     <>
       <img src={posterUrl} alt="Poster" className={classes.image} />
@@ -34,7 +45,16 @@ const MovieDetails = ({
           </Button>
         </div>
         <div className={classes.icons}>
-          <Plus className={classes.svg} />
+          <Plus
+            className={classes.svg}
+            onClick={() =>
+              handleAddToFavorites({
+                id: id,
+                title: nameRu,
+                coverUrl: posterUrl,
+              })
+            }
+          />
           <Like className={classes.svg} />
           <Volume className={classes.svg} />
         </div>
