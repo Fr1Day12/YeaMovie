@@ -1,8 +1,8 @@
 import { Film } from "@/shared/interfaces";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const kinopoiskApiKey = process.env.API_KEY;
-const kinopoiskApiBaseUrl = process.env.BASE_API_URL;
+const kinopoiskApiKey = "dd247791-0002-4a69-ac01-7bac9a236043";
+const kinopoiskApiBaseUrl = "https://kinopoiskapiunofficial.tech/api";
 
 export const searchMovieApi = createApi({
   reducerPath: "searchMovieApi",
