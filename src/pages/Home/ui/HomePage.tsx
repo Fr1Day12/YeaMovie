@@ -16,7 +16,7 @@ const HomePage = () => {
     <>
       <SectionHeader />
       <Slider
-        items={data.items}
+        items={data?.items}
         title={"Explore our wide variety of categories"}
         text={
           "Whether you’re looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new."

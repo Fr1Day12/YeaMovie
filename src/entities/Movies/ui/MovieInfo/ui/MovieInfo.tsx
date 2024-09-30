@@ -17,12 +17,18 @@ import ReviewList from "@/widgets/Reviews/ui/ReviewList/ui/ReviewList";
 import { useEffect, useState } from "react";
 import { Review } from "@/shared/interfaces";
 import MovieDescription from "@/entities/Movies/ui/MovieInfo/ui/MovieDescription/ui/MovieDescription";
+import MovieInfoBlock from "@/entities/Movies/ui/MovieInfo/ui/MovieInfoBlock/ui/MovieInfoBlock";
 
-/* Разделить на компоненты и убрать инлайн стили*/
+const InfoBlock = ({ icon: Icon, title, children }) => (
+  <div className={classes.block}>
+    <Icon className={classes.svg} />
+    <p>{title}</p>
+    {children}
+  </div>
+);
 
 const MovieInfo = () => {
   const { id } = useParams();
-
   const [reviewsArray, setReviewsArray] = useState<Review[]>([]);
 
   const { data: reviews, isLoading: isLoadingReviews } =
@@ -37,26 +43,15 @@ const MovieInfo = () => {
   }, [reviews, isLoadingReviews]);
 
   if (!movieData) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}>
-        <h2>Loading...</h2>
-      </div>
-    );
+    return <div className={classes.loading}>Loading...</div>;
   }
 
   return (
     <>
       <MovieDetails {...movieData} />
-
       <div className={classes.container}>
         <MovieDescription description={movieData.description} />
         <CastSlider {...{ staff, isLoadingStaff }} />
-
         {isLoadingReviews || reviews === undefined ? (
           <div>Loading...</div>
         ) : (
@@ -68,71 +63,50 @@ const MovieInfo = () => {
         )}
 
         <div className={classes.info}>
-          <div className={classes.block}>
-            <Calendar className={classes.svg} />
-            <p style={{ margin: "0" }}>Reliased Year </p>
-          </div>
-          <p style={{ margin: "14px 0 30px 0" }}>{movieData.year}</p>
-
-          <div className={classes.block}>
-            <Language className={classes.svg} />
-            <p>Available Languages</p>
-          </div>
-          {movieData.countries.map((language: { country: string }) => {
-            return (
+          <MovieInfoBlock icon={Calendar} title="Released Year">
+            <p className={classes.year}>{movieData.year}</p>
+          </MovieInfoBlock>
+          <MovieInfoBlock icon={Language} title="Available Languages">
+            {movieData.countries.map((language: { country: string }) => (
               <div className={classes.lang} key={language.country}>
                 {language.country}
               </div>
-            );
-          })}
-
-          <div className={classes.block}>
-            <Star className={classes.svg} />
-            <p style={{ margin: "0" }}>Rating</p>
-          </div>
-          <div className={classes.rating}>
-            <p style={{ margin: "4px" }}>Kinopoisk</p>
-            <Rating
-              name="read-only"
-              precision={0.5}
-              value={movieData.ratingKinopoisk}
-              readOnly
-            />
-          </div>
-
-          <div className={classes.block}>
-            <Genres className={classes.svg} />
-            Genres
-          </div>
-          {movieData.genres.map((genre: { genre: string }) => {
-            return (
+            ))}
+          </MovieInfoBlock>
+          <MovieInfoBlock icon={Star} title="Rating">
+            <div className={classes.rating}>
+              <p>Kinopoisk</p>
+              <Rating
+                name="read-only"
+                precision={0.5}
+                value={movieData.ratingKinopoisk}
+                readOnly
+              />
+            </div>
+          </MovieInfoBlock>
+          <MovieInfoBlock icon={Genres} title="Genres">
+            {movieData.genres.map((genre: { genre: string }) => (
               <div key={genre.genre} className={classes.genre}>
                 {genre.genre}
               </div>
-            );
-          })}
-
-          <div>
-            {!isLoadingStaff && (
-              <>
-                <p style={{ marginBottom: "14px" }}>Director</p>
-
-                <Image
-                  src={staff[0].posterUrl}
-                  alt={staff[0].nameRu}
-                  name={staff[0].nameRu}
-                />
-
-                <p style={{ marginBottom: "14px" }}>Producer</p>
-
-                <Image
-                  src={staff[1].posterUrl}
-                  alt={staff[1].nameRu}
-                  name={staff[1].nameRu}
-                />
-              </>
-            )}
-          </div>
+            ))}
+          </MovieInfoBlock>
+          {!isLoadingStaff && staff.length > 1 && (
+            <>
+              <p>Director</p>
+              <Image
+                src={staff[0].posterUrl}
+                alt={staff[0].nameRu}
+                name={staff[0].nameRu}
+              />
+              <p>Producer</p>
+              <Image
+                src={staff[1].posterUrl}
+                alt={staff[1].nameRu}
+                name={staff[1].nameRu}
+              />
+            </>
+          )}
         </div>
       </div>
     </>
