@@ -12,11 +12,13 @@ const HomePage = () => {
     return <div>Loading...</div>;
   }
 
+  const items = data.items || [];
+
   return (
     <>
       <SectionHeader />
       <Slider
-        items={data?.items}
+        items={items}
         title={"Explore our wide variety of categories"}
         text={
           "Whether you’re looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new."
