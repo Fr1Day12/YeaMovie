@@ -6,6 +6,7 @@ import useMovieQuery from "@/shared/helpers/hooks/useMovieQuery";
 import Slider from "@/shared/ui/Slider/ui/Slider";
 
 const HomePage = () => {
+  console.log(useMovieQuery("Movies"));
   const { isLoading, data } = useMovieQuery("Movies");
 
   if (isLoading) {
