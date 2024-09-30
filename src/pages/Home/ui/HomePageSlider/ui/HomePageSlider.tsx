@@ -3,9 +3,9 @@ import MoviesCardSkeleton from "@/shared/ui/skeleton/ui/MoviesCardSkeleton";
 import Slider from "@/shared/ui/Slider/ui/Slider";
 
 const HomePageSlider = () => {
-  const { isLoading, data } = useMovieQuery("Movies");
+  const { isLoading, data, hasError } = useMovieQuery("Movies");
 
-  if (isLoading) {
+  if (isLoading || hasError) {
     return <MoviesCardSkeleton width={295} />;
   }
 
