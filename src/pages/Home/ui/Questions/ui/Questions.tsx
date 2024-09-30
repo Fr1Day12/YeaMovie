@@ -16,14 +16,14 @@ const Questions = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/Support");
+    navigate("/Support#ContactForm");
   };
 
   return (
     <section className={classes.section}>
       <div className={classes.container}>
         <div className={classes.headline}>
-          <div className={classes.textContainer}>
+          <div>
             <h2>Frequently Asked Questions</h2>
             <p>
               Got questions? We've got answers! Check out our FAQ section to

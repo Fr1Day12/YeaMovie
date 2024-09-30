@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Stack } from "@mui/material";
-import MovieCard from "@/entities/MovieCard/ui/MovieCard";
+import MovieCard from "@/entities/Movies/ui/MovieCard/ui/MovieCard";
 import * as classes from "./classes.module.scss";
 import SliderNavigation from "@/shared/ui/SliderNavigation/ui/SliderNavigation";
 import { FilmData } from "@/shared/interfaces";
@@ -11,9 +11,17 @@ interface Props {
   children?: React.ReactNode;
   title?: string;
   text?: string;
+  marginTop?: number;
 }
 
-const Slider = ({ items, itemsPerPage = 5, children, title, text }: Props) => {
+const Slider = ({
+  items,
+  itemsPerPage = 5,
+  children,
+  title,
+  text,
+  marginTop = 100,
+}: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalItems = items.length;
@@ -31,12 +39,11 @@ const Slider = ({ items, itemsPerPage = 5, children, title, text }: Props) => {
   const currentItems = items.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className={classes.container}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}>
+    <div
+      className={`${
+        marginTop === 100 ? classes.container : classes.containerTop
+      }`}>
+      <div className={classes.slider}>
         {title || text ? (
           <div>
             {title && <h2 className={classes.title}>{title}</h2>}
@@ -47,6 +54,9 @@ const Slider = ({ items, itemsPerPage = 5, children, title, text }: Props) => {
           handleNext={handleNext}
           handlePrev={handlePrev}
           currentIndex={currentIndex}
+          className={`${
+            marginTop === 100 ? classes.borderRight : classes.border
+          }`}
         />
       </div>
       <Stack direction={"row"} gap={"20px"}>

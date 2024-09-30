@@ -20,6 +20,18 @@
   }
 }
 
+.title {
+  font-weight: 700;
+  font-size: 38px;
+  color: var(--absolute-white);
+  margin: 0 0 14px 0;
+}
+
+.text {
+  font-size: 18px;
+  color: var(--grey-60);
+}
+
 .containerCard {
   display: flex;
   justify-content: center;

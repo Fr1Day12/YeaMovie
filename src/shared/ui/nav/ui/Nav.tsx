@@ -1,36 +1,49 @@
 import { NavLink } from "react-router-dom";
 import * as classes from "./classes.module.scss";
 import Button from "@/shared/ui/button/ui/Button";
-import { useState } from "react";
 
 const Nav = () => {
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // const toggleMenu = () => {
-  //   setIsOpen((prev) => !prev);
-  // };
-
   return (
     <nav className={classes.navigation}>
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? classes.active : "")}>
-        <Button text={"Home"} />
+        {({ isActive }) => (
+          <Button
+            text={"Home"}
+            className={`${classes.button} ${isActive ? classes.active : ""}`}
+          />
+        )}
       </NavLink>
       <NavLink
         to="/Movies"
         className={({ isActive }) => (isActive ? classes.active : "")}>
-        <Button text={"Movie & Shows"} className={classes.button} />
+        {({ isActive }) => (
+          <Button
+            text={"Movie & Shows"}
+            className={`${classes.button} ${isActive ? classes.active : ""}`}
+          />
+        )}
       </NavLink>
       <NavLink
         to="/Support"
         className={({ isActive }) => (isActive ? classes.active : "")}>
-        <Button text={"Support"} />
+        {({ isActive }) => (
+          <Button
+            text={"Support"}
+            className={`${classes.button} ${isActive ? classes.active : ""}`}
+          />
+        )}
       </NavLink>
       <NavLink
         to="/Subscribe"
         className={({ isActive }) => (isActive ? classes.active : "")}>
-        <Button text={"Subscribe"} />
+        {({ isActive }) => (
+          <Button
+            text={"Subscribe"}
+            className={`${classes.button} ${isActive ? classes.active : ""}`}
+          />
+        )}
       </NavLink>
     </nav>
   );

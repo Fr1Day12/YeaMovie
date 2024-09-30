@@ -1,0 +1,27 @@
+.card {
+  width: 295px;
+  height: 342px;
+  padding: 30px;
+  border: 1px solid var(--black-15);
+  border-radius: 12px;
+  margin-top: 80px;
+  cursor: pointer;
+  background-color: var(--black-10);
+}
+
+.text {
+  display: flex;
+  color: var(--absolute-white);
+  justify-content: space-between;
+}
+
+.span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.image {
+  width: 235px;
+  height: 252px;
+}

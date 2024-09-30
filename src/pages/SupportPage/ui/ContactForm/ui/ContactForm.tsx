@@ -16,7 +16,7 @@ const ContactForm = () => {
           className={classes.image}
         />
       </div>
-      <div className={classes.rightSection}>
+      <div className={classes.rightSection} id="ContactForm">
         <SupportForm />
       </div>
     </section>

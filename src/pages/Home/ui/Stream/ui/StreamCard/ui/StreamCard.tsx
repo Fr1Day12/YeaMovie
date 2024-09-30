@@ -14,7 +14,7 @@ const StreamCard = ({ img: ImgComponent, name, text }: Props) => {
         <ImgComponent className={classes.image} />
         <h3>{name}</h3>
       </div>
-      <p className={classes.text}>{text}</p>
+      <p>{text}</p>
     </div>
   );
 };

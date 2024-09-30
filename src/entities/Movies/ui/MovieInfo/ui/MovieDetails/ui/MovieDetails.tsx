@@ -30,7 +30,7 @@ const MovieDetails = ({
   };
 
   return (
-    <>
+    <div className={classes.wrapper}>
       <img src={posterUrl} alt="Poster" className={classes.image} />
       <h2 className={classes.title}>{nameRu}</h2>
       <p className={classes.text}>{shortDescription}</p>
@@ -59,7 +59,7 @@ const MovieDetails = ({
           <Volume className={classes.svg} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

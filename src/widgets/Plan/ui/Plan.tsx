@@ -27,6 +27,7 @@ const Plan = () => {
           <ToggleSwitch calendar={calendar} handleClick={handleClick} />
         </div>
       </div>
+
       <div className={classes.containerCard}>
         {plans.map((plan) => (
           <PlanCard
