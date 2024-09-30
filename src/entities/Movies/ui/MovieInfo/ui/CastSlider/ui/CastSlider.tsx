@@ -29,7 +29,7 @@ const CastSlider = ({ staff, isLoadingStaff }: Props) => {
   };
 
   return (
-    <>
+    <div className={classes.cast}>
       <div className={classes.castContainer}>
         <p className={classes.infoTitle}>Cast</p>
         <ArrowLeft className={classes.arrowSvg} onClick={prevSlide} />
@@ -54,7 +54,7 @@ const CastSlider = ({ staff, isLoadingStaff }: Props) => {
             ))
         )}
       </div>
-    </>
+    </div>
   );
 };
 

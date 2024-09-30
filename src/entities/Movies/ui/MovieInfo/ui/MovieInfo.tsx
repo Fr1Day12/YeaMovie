@@ -16,10 +16,9 @@ import Image from "@/shared/ui/image/ui/Image";
 import ReviewList from "@/widgets/Reviews/ui/ReviewList/ui/ReviewList";
 import { useEffect, useState } from "react";
 import { Review } from "@/shared/interfaces";
+import MovieDescription from "@/entities/Movies/ui/MovieInfo/ui/MovieDescription/ui/MovieDescription";
 
-{
-  /* Разделить на компоненты и убрать инлайн стили*/
-}
+/* Разделить на компоненты и убрать инлайн стили*/
 
 const MovieInfo = () => {
   const { id } = useParams();
@@ -52,18 +51,11 @@ const MovieInfo = () => {
 
   return (
     <>
-      <div className={classes.wrapper}>
-        <MovieDetails {...movieData} />
-      </div>
+      <MovieDetails {...movieData} />
 
       <div className={classes.container}>
-        <div className={classes.description}>
-          <p className={classes.infoTitle}>Description</p>
-          <p className={classes.descriptionText}>{movieData.description}</p>
-        </div>
-        <div className={classes.cast}>
-          <CastSlider {...{ staff, isLoadingStaff }} />
-        </div>
+        <MovieDescription description={movieData.description} />
+        <CastSlider {...{ staff, isLoadingStaff }} />
 
         {isLoadingReviews || reviews === undefined ? (
           <div>Loading...</div>
@@ -80,7 +72,7 @@ const MovieInfo = () => {
             <Calendar className={classes.svg} />
             <p style={{ margin: "0" }}>Reliased Year </p>
           </div>
-          <p style={{ margin: "14px 0 3s0px 0" }}>{movieData.year}</p>
+          <p style={{ margin: "14px 0 30px 0" }}>{movieData.year}</p>
 
           <div className={classes.block}>
             <Language className={classes.svg} />

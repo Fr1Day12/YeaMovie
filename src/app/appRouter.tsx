@@ -1,12 +1,12 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "@/app/layouts/appLayout";
+import HomePage from "@/pages/Home/ui/HomePage";
 
 const MoviesPage = lazy(() => import("@/pages/Movies/ui/MoviesPage"));
 const SupportPage = lazy(() => import("@/pages/SupportPage/ui/SupportPage"));
 const Subscribe = lazy(() => import("@/pages/SubscriptionPage/ui/Subscribe"));
-const SearchPage = lazy(() => import("@/pages/SearchPage/ui/SearchPage"));
-const HomePage = lazy(() => import("@/pages/Home/ui/HomePage"));
+const SearchPage = lazy(() => import("@/pages/MovieInfoPage/ui/MovieInfoPage"));
 
 export const router = createBrowserRouter([
   {
@@ -16,11 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <HomePage />
-          </Suspense>
-        ),
+        element: <HomePage />,
       },
       {
         path: "/Movies",

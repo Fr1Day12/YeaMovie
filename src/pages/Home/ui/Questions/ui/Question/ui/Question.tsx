@@ -29,11 +29,7 @@ const Question = ({
       <div className={classes.box}>{number}</div>
       <div className={classes.text}>
         <h3>{question}</h3>
-        {showQuestion && (
-          <div className={classes.answer}>
-            <p>{text}</p>
-          </div>
-        )}
+        {showQuestion && <p className={classes.answer}>{text}</p>}
       </div>
 
       <div className={classes.iconContainer}>
@@ -42,7 +38,7 @@ const Question = ({
             showQuestion ? "" : classes.rotateImage
           }`}
         />
-        <span className={classes.verticalLine}></span>
+        <span className={classes.verticalLine} />
       </div>
     </div>
   );

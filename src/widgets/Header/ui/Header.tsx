@@ -19,14 +19,11 @@ const Header = () => {
 
   return (
     <header className={classes.container}>
-      <div className={classes.logo}>
         <Link to={"/"}>
-          <Logo width={200} height={60} />
+          <Logo width={200} height={60} className={classes.logo}/>
         </Link>
-      </div>
-      <div className={classes.nav}>
+        
         <Nav />
-      </div>
 
       <div className={classes.icons}>
         <SearchSvg

@@ -11,6 +11,7 @@
   cursor: pointer;
 
   @media (min-width: 1320px) {
+    margin-left: 162px;
     margin-top: 30px;
   }
 
@@ -25,6 +26,7 @@
 
 .icons {
   margin-top: 43px;
+  margin-right: 162px;
   display: flex;
   gap: 30px;
 
@@ -38,21 +40,4 @@
   }
 }
 
-.nav {
-  @media (min-width: 1320px) {
-    border-radius: 12px;
-    width: 555px;
-    height: 75px;
-    margin: 22px 423px 0 322px;
-  }
 
-  @media (min-width: 872px) and (max-width: 1319px) {
-    margin: 18px 120px 0 120px;
-    width: 350px;
-    height: 50px;
-  }
-
-  @media (max-width: 871px) {
-    display: none;
-  }
-}

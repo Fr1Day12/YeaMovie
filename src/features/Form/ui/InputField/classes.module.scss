@@ -1,0 +1,33 @@
+.inputField {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--absolute-white);
+    margin-bottom: 16px;
+  }
+
+  input {
+    border: 1px solid var(--black-15);
+    border-radius: 8px;
+    padding: 20px;
+    width: 413px;
+    height: 67px;
+    background: var(--black-08);
+    color: var(--absolute-white);
+  }
+
+  textarea {
+    border: 1px solid var(--black-15);
+    border-radius: 8px;
+    padding: 20px;
+    width: 876px;
+    height: 163px;
+    background-color: var(--black-08);
+    color: var(--absolute-white);
+    resize: none;
+  }
+}

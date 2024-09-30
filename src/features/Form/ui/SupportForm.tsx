@@ -2,54 +2,57 @@ import * as classes from "./classes.module.scss";
 import ReactFlagsSelect from "react-flags-select";
 import { useState } from "react";
 import Button from "@/shared/ui/button/ui/Button";
+import InputField from "@/features/Form/ui/InputField/InputField";
 
 const SupportForm = () => {
   const [selected, setSelected] = useState("IN");
+  const [termsAccepted, setTermsAccepted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!termsAccepted) {
+      alert("Please accept terms and conditions");
+      return;
+    }
     setSubmit(true);
   };
+
   const [submit, setSubmit] = useState(false);
 
   if (submit) {
     return (
-      <div
+      <h2
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          textAlign: "center",
         }}>
-        <h2
-          style={{
-            textAlign: "center",
-          }}>
-          Thank you for your support. We will reach you soon!
-        </h2>
-      </div>
+        Thank you for your support. We will reach you soon!
+      </h2>
     );
   }
 
   return (
     <form className={classes.form}>
       <div className={classes.inputGroup}>
-        <div className={classes.inputField}>
-          <label htmlFor="firstName">FirstName</label>
-          <input type="text" id="firstName" placeholder="Enter First Name" />
-        </div>
-
-        <div className={classes.inputField}>
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" id="lastName" placeholder="Enter Last Name" />
-        </div>
+        <InputField
+          id="firstName"
+          label="First Name"
+          placeholder="Enter First Name"
+        />
+        <InputField
+          id="lastName"
+          label="Last Name"
+          placeholder="Enter Last Name"
+        />
       </div>
 
       <div className={classes.inputGroup}>
-        <div className={classes.inputField}>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your Email" />
-        </div>
-
+        <InputField
+          id="email"
+          label="Email"
+          type="email"
+          placeholder="Enter Email"
+        />
         <div className={classes.inputField}>
           <label htmlFor="phoneNumber">Phone Number</label>
           <div className={classes.phoneInput}>
@@ -78,7 +81,13 @@ const SupportForm = () => {
 
       <div className={classes.buttonContainer}>
         <div className={classes.checkboxContainer}>
-          <input type="checkbox" id="terms" className={classes.checkbox} />
+          <input
+            type="checkbox"
+            id="terms"
+            className={classes.checkbox}
+            required
+            onChange={(e) => setTermsAccepted(e.target.checked)}
+          />
           <label htmlFor="terms" className={classes.checkboxLabel}>
             I agree with Terms of Use and Privacy Policy
           </label>

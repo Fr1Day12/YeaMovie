@@ -22,7 +22,7 @@ const PlanCard = ({ title, text, price, calendar, priceYear }: Props) => {
       <h4>{title}</h4>
       <p>{text}</p>
       <p className={classes.price}>
-        <span>{`${calendar ? price : priceYear}`}</span>/mounth
+        <span>{`${calendar ? price : priceYear}`}</span> /mounth
       </p>
 
       <div className={classes.buttonContainer}>
