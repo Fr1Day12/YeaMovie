@@ -5,6 +5,7 @@ import Slider from "@/shared/ui/Slider/ui/Slider";
 import { useNavigate } from "react-router-dom";
 import { movieSection, showsSection } from "@/shared/constants";
 import { FilmData } from "@/shared/interfaces";
+import MoviesCardSkeleton from "@/shared/ui/skeleton/ui/MoviesCardSkeleton";
 
 interface Props {
   Category: string;
@@ -27,7 +28,7 @@ const MoviesCategory = ({ Category }: Props) => {
           const { isLoading, data } = movieData[index];
 
           if (isLoading) {
-            return <div key={item.id}>Loading...</div>;
+            return <MoviesCardSkeleton />;
           }
 
           return (
