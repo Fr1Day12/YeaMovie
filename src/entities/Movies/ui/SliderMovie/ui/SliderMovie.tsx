@@ -11,6 +11,7 @@ import { useAppDispatch } from "@/app/appStore";
 import { addFavorite } from "@/features/Favorites/Slice/favoritesSlice";
 import SliderNavigation from "@/shared/ui/SliderNavigation/ui/SliderNavigation";
 import { MovieForSlice } from "@/shared/interfaces";
+import MoviesCardSkeleton from "@/shared/ui/skeleton/ui/MoviesCardSkeleton";
 
 const ids = [843650, 843649, 679830, 263531];
 const SliderMovie = () => {
@@ -40,7 +41,14 @@ const SliderMovie = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <MoviesCardSkeleton
+        width={1594}
+        height={835}
+        marginTop={6}
+        itemsPerPage={1}
+      />
+    );
   }
 
   const currentMovie = data[currentIndex];
