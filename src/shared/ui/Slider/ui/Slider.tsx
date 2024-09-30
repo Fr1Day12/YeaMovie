@@ -24,7 +24,7 @@ const Slider = ({
 }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const totalItems = items?.length;
+  const totalItems = items.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const handleNext = () => {
