@@ -7,7 +7,6 @@ import HomePageSlider from "@/pages/Home/ui/HomePageSlider/ui/HomePageSlider";
 const HomePage = () => {
   return (
     <>
-      <SectionHeader />
       <HomePageSlider />
       <StreamSection />
       <Questions />
