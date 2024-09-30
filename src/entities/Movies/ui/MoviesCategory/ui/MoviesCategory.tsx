@@ -1,6 +1,6 @@
 import useMovieQuery from "@/shared/helpers/hooks/useMovieQuery";
 import * as classes from "./classes.module.scss";
-import MovieCard from "@/entities/MovieCard/ui/MovieCard";
+import MovieCard from "@/entities/Movies/ui/MovieCard/ui/MovieCard";
 import Slider from "@/shared/ui/Slider/ui/Slider";
 import { useNavigate } from "react-router-dom";
 import { movieSection, showsSection } from "@/shared/constants";

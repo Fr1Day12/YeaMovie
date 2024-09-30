@@ -23,9 +23,7 @@ const SliderNavigation = ({
   return (
     <div
       className={
-        border
-          ? cn(classes.containerSvg, classes.border, className)
-          : cn(classes.containerSvg, className)
+        border ? cn(classes.containerSvg, className) : classes.containerSvg
       }>
       <Arrow
         transform="rotate(180)"
@@ -40,7 +38,6 @@ const SliderNavigation = ({
           />
         ))}
       </div>
-
       <Arrow className={classes.arrow} onClick={handleNext} />
     </div>
   );

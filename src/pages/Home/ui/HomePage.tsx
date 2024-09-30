@@ -15,15 +15,14 @@ const HomePage = () => {
   return (
     <>
       <SectionHeader />
-      <div style={{ margin: "200px 161px 0 161px" }}>
-        <Slider
-          items={data.items}
-          title={"Explore our wide variety of categories"}
-          text={
-            "Whether you’re looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new."
-          }
-        />
-      </div>
+      <Slider
+        items={data.items}
+        title={"Explore our wide variety of categories"}
+        text={
+          "Whether you’re looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new."
+        }
+        marginTop={200}
+      />
       <StreamSection />
       <Questions />
       <Plan />
