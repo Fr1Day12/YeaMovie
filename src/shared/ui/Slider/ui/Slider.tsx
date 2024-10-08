@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Stack } from "@mui/material";
-import MovieCard from "@/entities/Movies/ui/MovieCard/ui/MovieCard";
 import * as classes from "./classes.module.scss";
-import SliderNavigation from "@/shared/ui/SliderNavigation/ui/SliderNavigation";
+import SliderNavigation from "@/shared/ui/Slider/ui/SliderNavigation/ui/SliderNavigation";
 import { FilmData } from "@/shared/interfaces";
+import { useSwipeable } from "react-swipeable";
+import { useMediaQuery } from "react-responsive";
+import { MovieCard } from "@/entities/movie";
+import SliderMobile from "@/shared/ui/Slider/ui/SliderMobile/ui/SliderMobile";
 
 interface Props {
-  itemsPerPage?: number;
   items: FilmData[];
   children?: React.ReactNode;
   title?: string;
@@ -14,18 +16,12 @@ interface Props {
   marginTop?: number;
 }
 
-const Slider = ({
-  items,
-  itemsPerPage = 5,
-  children,
-  title,
-  text,
-  marginTop = 100,
-}: Props) => {
+const Slider = ({ items, children, title, text, marginTop = 100 }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useMediaQuery({ query: "(max-width: 871px)" });
+  const itemsPerPage = isMobile ? 2 : 5;
 
-  const totalItems = items.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = Math.ceil(items.length / itemsPerPage);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % totalPages);
@@ -38,11 +34,18 @@ const Slider = ({
   const startIndex = currentIndex * itemsPerPage;
   const currentItems = items.slice(startIndex, startIndex + itemsPerPage);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    trackMouse: true,
+  });
+
   return (
     <div
       className={`${
         marginTop === 100 ? classes.container : classes.containerTop
-      }`}>
+      }`}
+      {...handlers}>
       <div className={classes.slider}>
         {title || text ? (
           <div>
@@ -59,11 +62,15 @@ const Slider = ({
           }`}
         />
       </div>
-      <Stack direction={"row"} gap={"20px"}>
+      <Stack gap={"20px"} flexDirection={"row"} justifyContent={"center"}>
         {currentItems.map((item) => (
           <MovieCard key={item.kinopoiskId} {...item} />
         ))}
       </Stack>
+
+      {isMobile && (
+        <SliderMobile currentIndex={currentIndex} totalPages={totalPages} />
+      )}
     </div>
   );
 };

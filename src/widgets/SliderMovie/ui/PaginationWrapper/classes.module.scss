@@ -1,0 +1,19 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 14px 24px;
+}
+
+.containerSvg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sliderNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

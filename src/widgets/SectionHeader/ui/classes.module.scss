@@ -1,0 +1,105 @@
+.background {
+  background-image: url("../../../shared/assets/jpg/Header.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.textContainer {
+  @media (min-width: 1320px) {
+    width: 1096px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    margin: 0 150px;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--absolute-white);
+  font-weight: 700;
+  line-height: 150%;
+
+  @media (min-width: 1320px) {
+    margin-top: 676px;
+    font-size: 58px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    margin-top: 512px;
+    font-size: 48px;
+  }
+
+  @media (max-width: 871px) {
+    margin-top: 298px;
+    font-size: 28px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+
+  @media (min-width: 1320px) {
+    margin: 0 auto;
+    font-size: 18px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  @media (max-width: 871px) {
+    display: none;
+  }
+}
+
+.textPhone {
+  display: none;
+
+  @media (max-width: 871px) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--grey-60);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--red-45);
+  color: var(--absolute-white);
+  font-weight: 600;
+  border-radius: 8px;
+  gap: 4px;
+
+  @media (min-width: 1320px) {
+    margin: 0 auto;
+    font-size: 18px;
+    margin: 50px auto 0;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    margin: 0 auto;
+    font-size: 14px;
+    margin: 40px auto 0;
+  }
+
+  @media (max-width: 871px) {
+    margin: 30px auto 0;
+  }
+}

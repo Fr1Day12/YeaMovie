@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  width: 100%;
 }
 
 .logo {
@@ -11,33 +13,54 @@
   cursor: pointer;
 
   @media (min-width: 1320px) {
-    margin-left: 162px;
-    margin-top: 30px;
+    margin: 25px 0 0 80px;
+    width: 200px;
+    height: 60px;
   }
 
   @media (min-width: 872px) and (max-width: 1319px) {
-    margin-top: 20px;
+    margin: 25px 0 0 30px;
+    width: 165px;
+    height: 60px;
   }
 
   @media (max-width: 871px) {
-    margin: 46px auto 0 16px;
+    margin: 25px 0 0 15px;
+    width: 115px;
+    height: 60px;
   }
 }
 
 .icons {
   margin-top: 43px;
-  margin-right: 162px;
   display: flex;
   gap: 30px;
 
+  @media (min-width: 1320px) {
+    margin-right: 160px;
+  }
+
   @media (min-width: 872px) and (max-width: 1319px) {
-    gap: 10px;
-    margin-top: 20px;
+    margin-right: 80px;
   }
 
   @media (max-width: 871px) {
-    display: none;
+    position: absolute;
+    right: 38%;
+    top: 5px;
   }
 }
 
+.svgIcon {
+  cursor: pointer;
 
+  @media (min-width: 1320px) {
+    width: 34px;
+    height: 34px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    width: 24px;
+    height: 24px;
+  }
+}

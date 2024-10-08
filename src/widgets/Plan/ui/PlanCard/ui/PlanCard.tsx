@@ -1,6 +1,7 @@
 import Button from "@/shared/ui/button/ui/Button";
 import * as classes from "./classes.module.scss";
 import { useNavigate } from "react-router-dom";
+import cn from "classnames";
 
 interface Props {
   title: string;
@@ -19,10 +20,13 @@ const PlanCard = ({ title, text, price, calendar, priceYear }: Props) => {
 
   return (
     <div className={classes.container}>
-      <h4>{title}</h4>
-      <p>{text}</p>
+      <h4 className={classes.title}>{title}</h4>
+      <p className={classes.text}>{text}</p>
       <p className={classes.price}>
-        <span>{`${calendar ? price : priceYear}`}</span> /mounth
+        <span className={classes.priceSpan}>{`${
+          calendar ? price : priceYear
+        }`}</span>{" "}
+        /mounth
       </p>
 
       <div className={classes.buttonContainer}>
@@ -34,7 +38,7 @@ const PlanCard = ({ title, text, price, calendar, priceYear }: Props) => {
         <Button
           text={"Choose Plan"}
           onClick={() => handleClick()}
-          className={classes.buttonRed}
+          className={cn(classes.button, classes.buttonRed)}
         />
       </div>
     </div>

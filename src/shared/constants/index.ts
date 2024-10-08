@@ -68,7 +68,7 @@ export const questions = [
   {
     number: "03",
     id: 3,
-    question: "What content is available on StreamVibe??",
+    question: "What content is available on StreamVibe?",
     text: "StreamVibe is a streaming service that allows you to watch movies and shows on demand.",
   },
   {
@@ -107,7 +107,7 @@ export const plans = [
   {
     id: 1,
     title: "Basic Plan",
-    text: "Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.",
+    text: "Access to a wider selection of movies and shows, including most new releases and exclusive content",
     price: "$9.99",
     priceYear: "$99.99",
   },

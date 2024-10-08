@@ -4,8 +4,21 @@
   justify-content: center;
   flex-direction: column;
   width: var(--container-width);
-  height: 520px;
-  margin: 100px auto 0;
+
+  @media (min-width: 1441px) {
+    height: 520px;
+    margin: 100px auto 0;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    height: auto;
+    margin: 50px auto 0;
+  }
+
+  @media (max-width: 871px) {
+    height: auto;
+    margin-top: 10px;
+  }
 }
 
 .borderRight {
@@ -22,8 +35,25 @@
 }
 
 .containerTop {
-  width: 1498px;
-  margin: 200px auto 0;
+  @media (min-width: 1498px) {
+    width: 1498px;
+    margin: 200px auto 0;
+  }
+
+  @media (min-width: 1440px) and (max-width: 1497px) {
+    width: 100%;
+    margin: 160px auto 0;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    margin: 140px auto 0;
+    width: 100%;
+  }
+
+  @media (max-width: 871px) {
+    margin: 100px auto 0;
+    width: 358px;
+  }
 }
 
 .slider {
@@ -35,13 +65,57 @@
 .title {
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 38px;
   color: var(--absolute-white);
-  height: 57px;
+
+  @media (min-width: 1440px) {
+    font-size: 38px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
 }
 
 .text {
-  font-weight: 400;
-  font-size: 18px;
+  @media (min-width: 1440px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 14px;
+  }
+}
+
+.lineContainer {
+  display: flex;
+  justify-content: center;
+  width: 79px;
+  margin: 24px auto 0;
+}
+
+.lineBackground {
+  position: relative;
+  width: 79px;
+  height: 5px;
+  background-color: var(--black-12);
+  border-radius: 20px;
+}
+
+.lineActive {
+  position: absolute;
+  height: 5px;
+  background-color: var(--red-45);
+  transition: width 0.3s;
+  border-radius: 20px;
 }

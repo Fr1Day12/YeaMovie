@@ -16,16 +16,15 @@ const Plan = () => {
       <div className={classes.box}>
         <div className={classes.containerText}>
           <h2 className={classes.title}>
-            Explore our wide variety of categories
+            Choose the plan that's right for you
           </h2>
           <p className={classes.text}>
-            Whether you're looking for a comedy to make you laugh, a drama to
-            make you think, or a documentary to learn something new
+            Join StreamVibe and select from our flexible subscription options
+            tailored to suit your viewing preferences. Get ready for non-stop
+            entertainment!
           </p>
         </div>
-        <div>
-          <ToggleSwitch calendar={calendar} handleClick={handleClick} />
-        </div>
+        <ToggleSwitch calendar={calendar} handleClick={handleClick} />
       </div>
 
       <div className={classes.containerCard}>

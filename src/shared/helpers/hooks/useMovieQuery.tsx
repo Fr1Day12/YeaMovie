@@ -1,4 +1,4 @@
-import { useGetFilmsTopQuery } from "@/entities/Movies/model/Api/kinopoiskApi";
+import { useGetFilmsTopQuery } from "@/shared/Api/kinopoiskApi";
 
 const useMovieQuery = (category: string, pageNumber = 1) => {
   const type = category === "Movies" ? "TOP_250_MOVIES" : "TOP_250_TV_SHOWS";

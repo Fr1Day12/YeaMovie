@@ -5,9 +5,11 @@ import StreamCard from "@/pages/Home/ui/Stream/ui/StreamCard/ui/StreamCard";
 const StreamSection = () => {
   return (
     <section>
-      <div className={classes.text}>
-        <h2>We Provide you streaming experience across various devices.</h2>
-        <p>
+      <div className={classes.textContainer}>
+        <h2 className={classes.title}>
+          We Provide you streaming experience across various devices.
+        </h2>
+        <p className={classes.text}>
           With StreamVibe, you can enjoy your favorite movies and TV shows
           anytime, anywhere. Our platform is designed to be compatible with a
           wide range of devices, ensuring that you never miss a moment of
