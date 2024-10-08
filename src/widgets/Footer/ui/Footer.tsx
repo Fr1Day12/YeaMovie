@@ -10,24 +10,18 @@ const Footer = () => {
       <div className={classes.box}>
         <FooterBlocks />
 
-        <div>
+        <div className={classes.block}>
           <h5 className={classes.title}>Connect With Us</h5>
           <div className={classes.icons}>
             <Facebook
-              width={24}
-              height={24}
               className={classes.image}
               onClick={() => window.open("https://www.facebook.com/", "_blank")}
             />
             <Twitter
-              width={24}
-              height={24}
               className={classes.image}
               onClick={() => window.open("https://twitter.com/", "_blank")}
             />
             <LinkedIn
-              width={24}
-              height={24}
               className={classes.image}
               onClick={() => window.open("https://www.linkedin.com/", "_blank")}
             />
@@ -36,9 +30,11 @@ const Footer = () => {
       </div>
 
       <div className={classes.footer}>
-        <p>&copy;2023 streamvib, All Rights Reserved</p>
+        <p className={classes.text}>
+          &copy;2023 streamvib, All Rights Reserved
+        </p>
 
-        <div className={classes.text}>
+        <div className={classes.textConatainer}>
           <span>Terms of Use</span>
           <span>Privacy Policy</span>
           <span>Cookie Policy</span>

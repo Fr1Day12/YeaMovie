@@ -3,9 +3,11 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "@/app/layouts/appLayout";
 import HomePage from "@/pages/Home/ui/HomePage";
 
-const MoviesPage = lazy(() => import("@/pages/Movies/ui/MoviesPage"));
+const MoviesPage = lazy(() => import("@/pages/MoviesPage/ui/MoviesPage"));
 const SupportPage = lazy(() => import("@/pages/SupportPage/ui/SupportPage"));
-const Subscribe = lazy(() => import("@/pages/SubscriptionPage/ui/Subscribe"));
+const Subscribe = lazy(
+  () => import("@/pages/SubscriptionPage/ui/SubscriptionPage")
+);
 const SearchPage = lazy(() => import("@/pages/MovieInfoPage/ui/MovieInfoPage"));
 
 export const router = createBrowserRouter([

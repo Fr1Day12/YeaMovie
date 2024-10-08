@@ -1,0 +1,53 @@
+.containerSvg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+
+  @media (min-width: 1440px) {
+    width: 257px;
+    padding: 16px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    width: 205px;
+    padding: 12px;
+  }
+
+  @media (max-width: 871px) {
+    display: none;
+  }
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-10);
+  border: 1px solid var(--black-12);
+  cursor: pointer;
+
+  @media (min-width: 1440px) {
+    border-radius: 8px;
+    padding: 14px;
+    width: 56px;
+    height: 56px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    border-radius: 6px;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.line {
+  margin: auto auto;
+  display: flex;
+  gap: 3px;
+}
+
+.lineActive {
+  color: var(--red-45);
+}

@@ -7,10 +7,12 @@ const FooterBlocks = () => {
       {footer.map((item) => {
         return (
           <div key={item.id} className={classes.container}>
-            <h3>{item.title}</h3>
-            <ul>
+            <h3 className={classes.title}>{item.title}</h3>
+            <ul className={classes.list}>
               {item.text.map((link) => (
-                <li key={link}>{link}</li>
+                <li key={link} className={classes.element}>
+                  {link}
+                </li>
               ))}
             </ul>
           </div>

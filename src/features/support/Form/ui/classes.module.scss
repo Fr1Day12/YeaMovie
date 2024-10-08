@@ -1,0 +1,264 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1441px) {
+    gap: 50px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    gap: 40px;
+  }
+
+  @media (max-width: 871px) {
+    gap: 20px;
+  }
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  border: 1px solid var(--black-15);
+  background-color: var(--black-08);
+  color: var(--absolute-white);
+  resize: none;
+
+  @media (min-width: 1441px) {
+    border-radius: 8px;
+    padding: 20px;
+    height: 163px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    padding: 16px;
+    border-radius: 6px;
+    height: 129px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 6px;
+    padding: 16px;
+    height: 109px;
+  }
+}
+
+.label {
+  font-weight: 600;
+  line-height: 150%;
+  color: var(--absolute-white);
+
+  @media (min-width: 1441px) {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+.input {
+  border: 1px solid var(--black-15);
+  background: var(--black-08);
+  color: var(--absolute-white);
+
+  @media (min-width: 1441px) {
+    border-radius: 8px;
+    padding: 20px;
+    width: 413px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 6px;
+    padding: 16px;
+    width: 309px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: 1441px) {
+    gap: 50px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    gap: 40px;
+  }
+
+  @media (max-width: 871px) {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+.phoneInputContainer {
+  display: flex;
+  gap: 10px;
+
+  select {
+    border: 1px solid var(--black-15);
+    border-radius: 8px;
+    padding: 0px 12px;
+    width: 94px;
+    height: 67px;
+    background-color: var(--black-08);
+    color: var(--grey-60);
+  }
+}
+
+.phoneInput {
+  border: 1px solid var(--black-15);
+  background: var(--black-08);
+  color: var(--absolute-white);
+
+  @media (min-width: 1441px) {
+    border-radius: 8px;
+    padding: 20px;
+    width: 303px;
+    height: 67px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    border-radius: 6px;
+    padding: 16px;
+    height: 53px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 6px;
+    padding: 16px;
+    height: 53px;
+  }
+}
+
+.flagMenu {
+  border: 1px solid var(--black-15);
+  background-color: var(--black-08);
+
+  @media (min-width: 1441px) {
+    height: 67px;
+    padding: 0px 12px;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    border-radius: 6px;
+    padding: 0px 8px;
+    height: 53px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 6px;
+    padding: 0px 8px;
+    height: 53px;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 871px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  padding-left: 40px;
+  line-height: 150%;
+  color: var(--grey-60);
+
+  @media (min-width: 1441px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 16px;
+  }
+}
+
+.checkboxLabel::before {
+  content: "";
+  display: block;
+  border: 1px solid var(--black-15);
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.checkboxLabel::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+
+  background: url("../../../../shared/assets/svg/checkbox.svg") no-repeat;
+  opacity: 0;
+  background-size: 28px 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.checkbox:checked + .checkboxLabel::after {
+  opacity: 1;
+}
+
+.button {
+  background-color: var(--red-45);
+  font-weight: 600;
+  color: var(--absolute-white);
+  margin-left: auto;
+
+  @media (min-width: 1441px) {
+    padding: 18px 24px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    padding: 14px 20px;
+  }
+
+  @media (max-width: 871px) {
+    padding: 14px 20px;
+    margin-left: 0;
+  }
+}

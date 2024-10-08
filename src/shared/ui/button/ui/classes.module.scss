@@ -12,6 +12,8 @@
   white-space: nowrap;
   width: 100%;
   background-color: var(--black-06);
+  width: auto;
+  padding: 14px 24px;
 
   &:hover,
   &:active {
@@ -21,25 +23,15 @@
   }
 
   @media (min-width: 1320px) {
-    font-size: 14px;
-    line-height: 150%;
-    padding: 14px 24px;
     font-size: 18px;
-    width: 98px;
-    height: 55px;
-    font-weight: 400;
   }
 
   @media (min-width: 872px) and (max-width: 1319px) {
-    padding: 8px;
-    width: 65px;
-    height: 40px;
-    gap: 10px;
-    font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   @media (max-width: 871px) {
-    display: none;
+    font-size: 14px;
+    font-weight: 600;
   }
 }

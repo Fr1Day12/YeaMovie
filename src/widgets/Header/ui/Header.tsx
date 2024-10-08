@@ -5,38 +5,39 @@ import Logo from "@/shared/assets/svg/Logo.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Nav from "@/shared/ui/nav/ui/Nav";
-import Search from "@/entities/Movies/ui/SearchMovie/ui/Search";
-import Favorites from "@/features/Favorites/ui/Favorites";
+import Search from "@/features/movie/SearchMovie/ui/Search";
+import { Favorites } from "@/shared/ui/Favorites";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [keywords, setKeywords] = useState("");
   const [favoritesOpen, setFavoritesOpen] = useState(false);
+  const [openBurger, setOpenBurger] = useState(false);
 
   const handleFavoritesClose = () => {
-    setFavoritesOpen(false);
+    setFavoritesOpen((prev) => !prev);
+  };
+
+  const handleOverlayClick = () => {
+    setOpenBurger((prev) => !prev);
   };
 
   return (
     <header className={classes.container}>
-        <Link to={"/"}>
-          <Logo width={200} height={60} className={classes.logo}/>
-        </Link>
-        
-        <Nav />
+      <Link to={"/"}>
+        <Logo className={classes.logo} />
+      </Link>
+
+      <Nav openBurger={openBurger} onClick={handleOverlayClick} />
 
       <div className={classes.icons}>
         <SearchSvg
-          width={24}
-          height={26}
+          className={classes.svgIcon}
           onClick={() => setOpen((prev) => !prev)}
-          style={{ cursor: "pointer" }}
         />
         {open && <Search keywords={keywords} setKeywords={setKeywords} />}
         <Notification
-          width={24}
-          height={26}
-          style={{ cursor: "pointer" }}
+          className={classes.svgIcon}
           onClick={() => setFavoritesOpen((prev) => !prev)}
         />
         {favoritesOpen && <Favorites handleClose={handleFavoritesClose} />}

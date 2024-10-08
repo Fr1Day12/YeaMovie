@@ -10,7 +10,7 @@ const Image = ({ src, alt, name }: Props) => {
   return (
     <div className={classes.container}>
       <img src={src} alt={alt} className={classes.image} />
-      <p>{name}</p>
+      <span className={classes.staff}>{name}</span>
     </div>
   );
 };

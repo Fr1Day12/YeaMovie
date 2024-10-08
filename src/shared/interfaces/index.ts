@@ -43,9 +43,3 @@ export type Review = {
   type: string;
   kinopoiskId?: number;
 };
-
-export interface MovieForSlice {
-  id: number;
-  title: string;
-  coverUrl: string;
-}
