@@ -10,9 +10,9 @@ const Trial = () => {
   };
   return (
     <div className={classes.container}>
-      <div className={classes.text}>
-        <h2>Start your free trial today!</h2>
-        <p>
+      <div className={classes.textContainer}>
+        <h2 className={classes.title}>Start your free trial today!</h2>
+        <p className={classes.text}>
           This is a clear and concise call to action that encourages users to
           sign up for a free trial of StreamVibe.
         </p>

@@ -1,0 +1,22 @@
+.info {
+  border: 1px solid var(--black-15);
+  border-radius: 12px;
+  background-color: var(--black-10);
+
+  @media (min-width: 1440px) {
+    grid-area: 1 / 2 / 4 / 3;
+    padding: 50px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 871px) {
+    padding: 24px;
+  }
+}
+
+.year {
+  display: flex;
+}

@@ -1,0 +1,46 @@
+.container {
+  border: 1px solid var(--black-15);
+  border-radius: 12px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+
+  @media (min-width: 1441px) {
+    margin: 180px auto 150px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    margin: 100px auto 120px;
+  }
+
+  @media (max-width: 871px) {
+    margin: 80px auto 80px;
+    padding: 0;
+    border: none;
+  }
+}
+
+.buttonContainer {
+  position: relative;
+}
+
+.block {
+  background-color: var(--red-45);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px 24px;
+  width: 116px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--absolute-white);
+  position: absolute;
+  top: -75px;
+  left: 0;
+
+  @media (max-width: 871px) {
+    display: none;
+  }
+}

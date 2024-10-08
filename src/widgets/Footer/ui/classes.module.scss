@@ -1,68 +1,164 @@
 .container {
   display: flex;
-  padding: 100px 162px 50px 162px;
-  height: 505px;
   background-color: var(--black-06);
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 1320px) {
+    padding: 100px 0 50px 0;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    padding: 80px;
+  }
+
+  @media (max-width: 871px) {
+    padding-top: 50px;
+  }
 }
 
 .box {
   display: flex;
-  flex-direction: row;
   align-items: baseline;
+
+  @media (max-width: 871px) {
+    display: block;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
   font-weight: 600;
-  font-size: 20px;
   color: var(--absolute-white);
+
+  @media (min-width: 1320px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 16px;
+  }
 }
 
 .image {
+  display: flex;
   border: 1px solid var(--black-15);
   border-radius: 8px;
-  padding: 16px;
-  width: 56px;
-  height: 56px;
   background-color: var(--black-10);
   cursor: pointer;
 
   &:hover {
     background-color: var(--black-12);
   }
+
+  @media (min-width: 1320px) {
+    width: 56px;
+    height: 56px;
+    padding: 16px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+  }
+
+  @media (max-width: 871px) {
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .icons {
   display: flex;
-  gap: 14px;
   margin-top: 24px;
+
+  @media (min-width: 1320px) {
+    gap: 14px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 871px) {
+    gap: 8px;
+  }
 }
 
 .footer {
-  width: 1596px;
+  width: 71%;
   height: 51px;
   display: flex;
   justify-content: start;
   flex-direction: row;
   border-top: 1px solid var(--black-15);
-  margin: 100px 162px 50px 0;
+  margin: 100px auto 50px auto;
 
-  p {
-    margin-top: 24px;
-    font-weight: 400;
-    font-size: 18px;
+  @media (min-width: 872px) and (max-width: 1319px) {
+    width: 100%;
+    margin: 80px;
+  }
+
+  @media (max-width: 871px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    margin: 50px auto 20px 0;
   }
 }
 
 .text {
-  margin-left: auto;
   margin-top: 24px;
+  font-weight: 400;
+  font-size: 18px;
+
+  @media (max-width: 871px) {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 10px 0 0 10px;
+  }
+}
+
+.textConatainer {
+  margin: 24px 0 0 auto;
+
+  @media (max-width: 871px) {
+    font-size: 14px;
+    padding: 0;
+    margin: 24px 0 0 10px;
+  }
 
   span {
     font-weight: 400;
-    font-size: 18px;
-    padding: 0 20px 0 20px;
+
+    @media (min-width: 1320px) {
+      padding: 0 20px 0 20px;
+      font-size: 18px;
+    }
+
+    @media (min-width: 872px) and (max-width: 1319px) {
+      font-size: 16px;
+      padding: 0 10px 0 10px;
+    }
+
+    @media (max-width: 871px) {
+      font-size: 14px;
+      padding: 2px;
+    }
   }
 
   span:not(:last-child) {

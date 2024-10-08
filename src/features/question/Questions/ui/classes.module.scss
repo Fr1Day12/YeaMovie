@@ -1,0 +1,124 @@
+.section {
+  @media (min-width: 1441px) {
+    margin: 150px 160px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    margin: 150px 80px;
+  }
+
+  @media (max-width: 871px) {
+    margin: 150px 10px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: var(--container-width);
+
+  @media (min-width: 1320px) {
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 871px) {
+    margin-bottom: 40px;
+  }
+}
+
+.headline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 871px) {
+    flex-direction: column;
+  }
+}
+
+.title {
+  font-weight: 700;
+  color: var(--absolute-white);
+
+  @media (min-width: 1320px) {
+    font-size: 38px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.text {
+  @media (min-width: 1320px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1319px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 14px;
+  }
+}
+
+.button {
+  border-radius: 8px;
+  padding: 18px 24px;
+  width: 176px;
+  height: 63px;
+  background: var(--red-45);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--absolute-white);
+  margin-left: auto;
+
+  @media (max-width: 871px) {
+    margin: 20px auto 0 0;
+  }
+}
+
+.containerQuestions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 175px);
+  grid-auto-flow: column;
+  grid-template: auto;
+
+  @media (min-width: 1441px) {
+    column-gap: 80px;
+  }
+
+  @media (min-width: 1319px) and (max-width: 1440px) {
+    column-gap: 40px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1318px) {
+    display: grid;
+    grid-template-columns: 425px;
+    grid-auto-flow: row;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  @media (max-width: 871px) {
+    display: grid;
+    grid-template-columns: 425px;
+    grid-auto-flow: row;
+    gap: 20px;
+    justify-content: center;
+  }
+}

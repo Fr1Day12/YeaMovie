@@ -1,0 +1,48 @@
+.inputField {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  line-height: 150%;
+  color: var(--absolute-white);
+
+  @media (min-width: 1441px) {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+.input {
+  border: 1px solid var(--black-15);
+  background: var(--black-08);
+  color: var(--absolute-white);
+
+  @media (min-width: 1441px) {
+    border-radius: 8px;
+    padding: 20px;
+    width: 413px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1440px) {
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 6px;
+    padding: 16px;
+    width: 309px;
+  }
+}

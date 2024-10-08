@@ -1,0 +1,22 @@
+.lineContainer {
+  display: flex;
+  justify-content: center;
+  width: 79px;
+  margin: 24px auto 0;
+}
+
+.lineBackground {
+  position: relative;
+  width: 79px;
+  height: 5px;
+  background-color: var(--black-12);
+  border-radius: 20px;
+}
+
+.lineActive {
+  position: absolute;
+  height: 5px;
+  background-color: var(--red-45);
+  transition: width 0.3s;
+  border-radius: 20px;
+}

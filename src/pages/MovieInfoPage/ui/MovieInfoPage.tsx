@@ -1,6 +1,6 @@
+import { MovieInfo } from "@/widgets/MovieInfo";
 import * as classes from "./classes.module.scss";
 import Header from "@/widgets/Header/ui/Header";
-import MovieInfo from "@/entities/Movies/ui/MovieInfo/ui/MovieInfo";
 
 function MovieInfoPage() {
   return (

@@ -1,0 +1,135 @@
+.cast {
+  border: 1px solid var(--black-15);
+  background-color: var(--black-10);
+
+  @media (min-width: 1440px) {
+    padding: 50px;
+    border-radius: 12px;
+    height: 291px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    padding: 40px;
+    border-radius: 10px;
+    height: 233px;
+  }
+
+  @media (max-width: 871px) {
+    padding: 24px;
+    border-radius: 10px;
+    height: 183px;
+  }
+}
+
+.infoTitle {
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--grey-60);
+
+  @media (min-width: 1440px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 14px;
+  }
+}
+
+.castContainer {
+  display: flex;
+
+  p {
+    margin-right: auto;
+  }
+
+  .arrowSvg {
+    border: 1px solid var(--black-15);
+    border-radius: 50%;
+    background-color: var(--black-08);
+    cursor: pointer;
+
+    @media (min-width: 1440px) {
+      width: 52px;
+      height: 52px;
+      padding: 14px;
+    }
+
+    @media (min-width: 872px) and (max-width: 1439px) {
+      padding: 12px;
+      width: 44px;
+      height: 44px;
+    }
+
+    @media (max-width: 871px) {
+      padding: 12px;
+      width: 44px;
+      height: 44px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.staff {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  margin-top: 30px;
+  transition: transform 0.5s ease;
+  justify-content: center;
+}
+
+.staffImg {
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+
+  @media (min-width: 1440px) {
+    width: 102px;
+    height: 109px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    width: 87px;
+    height: 89px;
+  }
+
+  @media (max-width: 871px) {
+    width: 70px;
+    height: 75px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.info {
+  grid-area: 1 / 2 / 4 / 3;
+  border: 1px solid var(--black-15);
+  background-color: var(--black-10);
+
+  @media (min-width: 1440px) {
+    padding: 50px;
+    height: 937px;
+    border-radius: 12px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    height: 762px;
+    border-radius: 10px;
+    padding: 40px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 10px;
+    padding: 24px;
+    height: 675px;
+  }
+}

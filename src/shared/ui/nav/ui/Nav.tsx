@@ -1,51 +1,57 @@
 import { NavLink } from "react-router-dom";
 import * as classes from "./classes.module.scss";
 import Button from "@/shared/ui/button/ui/Button";
+import Burger from "@/shared/assets/svg/Burger.svg";
 
-const Nav = () => {
+interface Props {
+  openBurger: boolean;
+  onClick: () => void;
+}
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/Movies", label: "Movie & Shows" },
+  { to: "/Support", label: "Support" },
+  { to: "/Subscribe", label: "Subscribe" },
+];
+
+const Nav = ({ openBurger, onClick }: Props) => {
   return (
-    <nav className={classes.navigation}>
-      <NavLink
-        to="/"
-        className={({ isActive }) => (isActive ? classes.active : "")}>
-        {({ isActive }) => (
-          <Button
-            text={"Home"}
-            className={`${classes.button} ${isActive ? classes.active : ""}`}
-          />
-        )}
-      </NavLink>
-      <NavLink
-        to="/Movies"
-        className={({ isActive }) => (isActive ? classes.active : "")}>
-        {({ isActive }) => (
-          <Button
-            text={"Movie & Shows"}
-            className={`${classes.button} ${isActive ? classes.active : ""}`}
-          />
-        )}
-      </NavLink>
-      <NavLink
-        to="/Support"
-        className={({ isActive }) => (isActive ? classes.active : "")}>
-        {({ isActive }) => (
-          <Button
-            text={"Support"}
-            className={`${classes.button} ${isActive ? classes.active : ""}`}
-          />
-        )}
-      </NavLink>
-      <NavLink
-        to="/Subscribe"
-        className={({ isActive }) => (isActive ? classes.active : "")}>
-        {({ isActive }) => (
-          <Button
-            text={"Subscribe"}
-            className={`${classes.button} ${isActive ? classes.active : ""}`}
-          />
-        )}
-      </NavLink>
-    </nav>
+    <>
+      <Burger className={classes.burger} onClick={onClick} />
+
+      {openBurger && (
+        <ul className={classes.list}>
+          {navItems.map((item) => (
+            <NavLink key={item.to} to={item.to}>
+              {({ isActive }) => (
+                <li
+                  className={`${classes.element} ${
+                    isActive ? classes.active : ""
+                  }`}>
+                  {item.label}
+                </li>
+              )}
+            </NavLink>
+          ))}
+        </ul>
+      )}
+
+      <nav className={classes.navigation}>
+        {navItems.map((item) => (
+          <NavLink key={item.to} to={item.to}>
+            {({ isActive }) => (
+              <Button
+                text={item.label}
+                className={`${classes.button} ${
+                  isActive ? classes.active : ""
+                }`}
+              />
+            )}
+          </NavLink>
+        ))}
+      </nav>
+    </>
   );
 };
 

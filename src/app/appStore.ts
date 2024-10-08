@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import { kinopoiskApi } from "@/entities/Movies/model/Api/kinopoiskApi";
-import { searchMovieApi } from "@/entities/Movies/ui/SearchMovie/api/searchMovieApi";
-import { searchQuerySlice } from "@/entities/Movies/ui/SearchMovie/model/searchQuerySlice";
-import favoritesSlice from "@/features/Favorites/Slice/favoritesSlice";
+import { kinopoiskApi } from "@/shared/Api/kinopoiskApi";
+import { searchMovieApi } from "@/features/movie/SearchMovie/api/searchMovieApi";
+import { searchQuerySlice } from "@/features/movie/SearchMovie/model/searchQuerySlice";
+import favoritesSlice from "@/shared/ui/Favorites/model/favoritesSlice";
 
 export const store = configureStore({
   reducer: {

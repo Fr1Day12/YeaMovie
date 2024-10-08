@@ -4,21 +4,57 @@
   gap: 10px;
   border: 1px solid var(--black-15);
   border-radius: 8px;
-  padding: 14px;
-  width: 419px;
-  height: 88px;
   background-color: var(--black-08);
-  margin-bottom: 14px;
 
-  p {
-    font-weight: 500;
+  @media (min-width: 1440px) {
+    margin: 14px 0;
+    padding: 14px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    margin: 10px 0;
+    padding: 12px;
+  }
+
+  @media (max-width: 871px) {
+    margin: 10px 0;
+    padding: 10px;
+  }
+}
+
+.staff {
+  font-weight: 500;
+  color: var(--absolute-white);
+
+  @media (min-width: 1440px) {
     font-size: 18px;
-    color: var(--absolute-white);
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 871px) {
+    font-size: 16px;
   }
 }
 
 .image {
-  border-radius: 8px;
-  width: 56px;
-  height: 60px;
+  @media (min-width: 1440px) {
+    border-radius: 8px;
+    width: 56px;
+    height: 60px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    border-radius: 6px;
+    width: 47px;
+    height: 50px;
+  }
+
+  @media (max-width: 871px) {
+    border-radius: 6px;
+    width: 47px;
+    height: 50px;
+  }
 }

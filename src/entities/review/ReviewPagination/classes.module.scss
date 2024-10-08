@@ -1,0 +1,48 @@
+.arrowsContainer {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.arrowSvg {
+  border: 1px solid var(--black-15);
+  border-radius: 50%;
+  background-color: var(--black-08);
+  cursor: pointer;
+
+  @media (min-width: 1440px) {
+    width: 52px;
+    height: 52px;
+    padding: 14px;
+  }
+
+  @media (min-width: 872px) and (max-width: 1439px) {
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+  }
+
+  @media (max-width: 871px) {
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.slide {
+  border-radius: 50%;
+  width: 16px;
+  height: 4px;
+  color: var(--black-20);
+}
+
+.active {
+  border-radius: 50%;
+  width: 23px;
+  height: 4px;
+  color: var(--red-45);
+}
